@@ -1,0 +1,1288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AURA — Fotógrafo &amp; DJ | Bodas y Eventos en Denia, Costa Blanca</title>
+  <meta name="description" content="Tu fotógrafo y DJ en un solo contrato. Bodas, quinceañeras y eventos en Denia y Costa Blanca. Presupuesto sin compromiso. Servicios en español.">
+  <meta name="keywords" content="fotógrafo bodas Denia, DJ bodas Costa Blanca, fotógrafo DJ boda España, quinceañera Alicante, eventos corporativos Denia">
+  <meta property="og:title" content="AURA — Fotógrafo &amp; DJ | Bodas en Denia">
+  <meta property="og:description" content="Tu fotógrafo y DJ en un solo contrato. La experiencia completa para tu boda o fiesta en Costa Blanca.">
+  <meta property="og:url" content="https://a-aura.com">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================================
+       VARIABLES & RESET
+    ============================================================ */
+    :root {
+      --bg-deep:       #05100a;
+      --bg-dark:       #0b1d10;
+      --bg-card:       #0f2015;
+      --bg-card-h:     #142a1a;
+      --green:         #1c6b3c;
+      --green-a:       #27c96d;
+      --green-glow:    rgba(39,201,109,.22);
+      --gold:          #c4a44a;
+      --gold-l:        #dfc06a;
+      --text:          #f2ede3;
+      --text-s:        #8da48f;
+      --text-m:        #4a5e4c;
+      --border:        rgba(39,201,109,.12);
+      --border-h:      rgba(39,201,109,.38);
+      --r:             4px;
+      --rl:            8px;
+      --shadow:        0 4px 24px rgba(0,0,0,.4);
+      --shadow-l:      0 8px 48px rgba(0,0,0,.6);
+      --ease:          cubic-bezier(.4,0,.2,1);
+      --t:             all .35s cubic-bezier(.4,0,.2,1);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg-deep);
+      color: var(--text);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    h1,h2,h3,h4 { font-family: 'Cormorant Garamond', serif; font-weight: 400; line-height: 1.12; }
+    h1 { font-size: clamp(2.6rem, 5.5vw, 5rem); }
+    h2 { font-size: clamp(1.9rem, 3.8vw, 3rem); }
+    h3 { font-size: clamp(1.3rem, 2.4vw, 1.9rem); }
+    p { margin-bottom: 1rem; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: .68rem; font-weight: 600;
+      letter-spacing: .3em; text-transform: uppercase;
+      color: var(--green-a); margin-bottom: 1rem; display: block;
+    }
+    .ornament {
+      display: flex; align-items: center; gap: 12px;
+      justify-content: center; margin-bottom: 14px;
+    }
+    .ornament-line { width: 38px; height: 1px; background: var(--green-a); opacity: .45; }
+    .ornament-dot  { width: 4px; height: 4px; border-radius: 50%; background: var(--green-a); }
+
+    /* ============================================================
+       BUTTONS
+    ============================================================ */
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: .74rem; font-weight: 600;
+      letter-spacing: .14em; text-transform: uppercase;
+      border-radius: var(--r); transition: var(--t);
+      cursor: pointer; border: none; white-space: nowrap;
+    }
+    .btn-primary { background: var(--green-a); color: var(--bg-deep); }
+    .btn-primary:hover { background: #34e07d; transform: translateY(-2px); box-shadow: 0 8px 24px var(--green-glow); }
+    .btn-outline { background: transparent; color: var(--text); border: 1px solid rgba(242,237,227,.28); }
+    .btn-outline:hover { border-color: var(--green-a); color: var(--green-a); transform: translateY(-2px); }
+    .btn-gold { background: var(--gold); color: var(--bg-deep); }
+    .btn-gold:hover { background: var(--gold-l); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196,164,74,.3); }
+
+    /* ============================================================
+       NAVIGATION
+    ============================================================ */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 20px 40px;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: var(--t);
+    }
+    .nav.scrolled {
+      background: rgba(5,16,10,.96);
+      backdrop-filter: blur(14px);
+      padding: 13px 40px;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      display: flex; align-items: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem; font-weight: 600; letter-spacing: .06em;
+    }
+    .logo-foto { color: var(--text); padding-right: 9px; border-right: 1.5px solid var(--green-a); }
+    .logo-name { color: var(--green-a); padding: 0 9px; font-size: 1rem; letter-spacing: .22em; }
+    .logo-dj   { color: var(--text); padding-left: 9px; border-left: 1.5px solid var(--green-a); }
+    .nav-links { display: flex; align-items: center; gap: 30px; list-style: none; }
+    .nav-links a {
+      font-size: .72rem; font-weight: 500;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: var(--text-s); transition: color .25s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      color: var(--green-a) !important;
+      border: 1px solid var(--green-a);
+      padding: 7px 18px; border-radius: var(--r);
+    }
+    .nav-cta:hover { background: var(--green-a); color: var(--bg-deep) !important; }
+    .nav-burger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; background: none; border: none; padding: 4px;
+    }
+    .nav-burger span { display: block; width: 24px; height: 1.5px; background: var(--text); transition: var(--t); }
+
+    /* ============================================================
+       MOBILE MENU
+    ============================================================ */
+    .mob-menu {
+      position: fixed; inset: 0;
+      background: rgba(5,16,10,.98);
+      z-index: 200;
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 28px;
+      transform: translateX(100%); transition: transform .4s var(--ease);
+    }
+    .mob-menu.open { transform: translateX(0); }
+    .mob-menu a {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem; color: var(--text); letter-spacing: .05em;
+      transition: color .25s;
+    }
+    .mob-menu a:hover { color: var(--green-a); }
+    .mob-close {
+      position: absolute; top: 22px; right: 22px;
+      background: none; border: none;
+      color: var(--text); font-size: 1.5rem; cursor: pointer;
+    }
+
+    /* ============================================================
+       HERO — SPLIT VIEW
+    ============================================================ */
+    .hero {
+      position: relative; height: 100vh; min-height: 680px;
+      display: flex; overflow: hidden;
+    }
+    .panel {
+      position: relative; flex: 1;
+      display: flex; flex-direction: column; justify-content: center;
+      overflow: hidden; cursor: pointer;
+      transition: flex .65s var(--ease);
+    }
+    .panel:hover { flex: 1.45; }
+    .panel-bg {
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+      transition: transform .8s var(--ease);
+    }
+    .panel:hover .panel-bg { transform: scale(1.05); }
+    .panel-photo .panel-bg {
+      background: linear-gradient(135deg, #0b2015 0%, #1e5236 45%, #0d2818 100%);
+    }
+    .panel-photo .panel-bg::after {
+      content: '';position: absolute; inset: 0;
+      background:
+        radial-gradient(circle at 28% 38%, rgba(39,201,109,.09) 0%, transparent 52%),
+        radial-gradient(circle at 72% 70%, rgba(196,164,74,.07) 0%, transparent 42%);
+    }
+    .panel-dj .panel-bg {
+      background: linear-gradient(135deg, #061009 0%, #0e2319 45%, #0a1910 100%);
+    }
+    .panel-dj .panel-bg::after {
+      content: ''; position: absolute; inset: 0;
+      background:
+        radial-gradient(circle at 68% 30%, rgba(39,201,109,.11) 0%, transparent 52%),
+        radial-gradient(circle at 32% 72%, rgba(196,164,74,.08) 0%, transparent 42%);
+    }
+    .panel-photo::before {
+      content: ''; position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(to right, rgba(5,16,10,.25) 0%, transparent 32%),
+                  linear-gradient(to left,  rgba(5,16,10,.65) 0%, transparent 38%);
+    }
+    .panel-dj::before {
+      content: ''; position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(to right, rgba(5,16,10,.65) 0%, transparent 38%),
+                  linear-gradient(to left,  rgba(5,16,10,.25) 0%, transparent 32%);
+    }
+    .panel-content {
+      position: relative; z-index: 2; padding: 88px 52px;
+      opacity: .55; transition: opacity .4s;
+    }
+    .panel:hover .panel-content { opacity: 1; }
+    .panel-eyebrow {
+      font-size: .62rem; font-weight: 600; letter-spacing: .42em;
+      text-transform: uppercase; color: var(--green-a);
+      margin-bottom: 14px; display: block;
+    }
+    .panel-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 5vw, 4.4rem);
+      font-weight: 300; line-height: 1.04; color: var(--text); margin-bottom: 18px;
+    }
+    .panel-title em { font-style: italic; color: var(--green-a); }
+    .panel-desc { font-size: .84rem; color: var(--text-s); max-width: 280px; line-height: 1.7; }
+    .panel-photo .panel-content { text-align: left; }
+    .panel-dj .panel-content  { text-align: right; padding: 88px 52px 88px 90px; }
+    .panel-dj .panel-desc      { margin-left: auto; }
+
+    /* CENTER SPLIT BRAND */
+    .hero-split {
+      position: absolute; left: 50%; top: 0; bottom: 0;
+      transform: translateX(-50%);
+      width: 2px; z-index: 10; pointer-events: none;
+    }
+    .split-line {
+      position: absolute; top: 0; bottom: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 1px;
+      background: linear-gradient(to bottom, transparent 5%, var(--green-a) 50%, transparent 95%);
+      animation: pulseLine 3.2s ease-in-out infinite;
+    }
+    @keyframes pulseLine { 0%,100%{opacity:.35} 50%{opacity:.9} }
+    .split-brand {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center; pointer-events: none;
+    }
+    .split-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 1.9vw, 1.7rem);
+      font-weight: 600; letter-spacing: .42em;
+      color: var(--text); text-transform: uppercase;
+      background: var(--bg-deep); padding: 9px 18px;
+      border: 1px solid var(--border-h); white-space: nowrap;
+    }
+    .split-sub {
+      display: block; font-size: .58rem; letter-spacing: .26em;
+      text-transform: uppercase; color: var(--green-a); margin-top: 7px;
+    }
+
+    /* HERO BOTTOM */
+    .hero-foot {
+      position: absolute; bottom: 0; left: 0; right: 0; z-index: 20;
+      background: linear-gradient(to top, rgba(5,16,10,.98) 0%, rgba(5,16,10,.7) 55%, transparent 100%);
+      padding: 52px 40px 60px; text-align: center;
+    }
+    .hero-h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.9rem, 4.2vw, 3.8rem);
+      font-weight: 400; color: var(--text); margin-bottom: 14px; line-height: 1.08;
+    }
+    .hero-h1 em { font-style: italic; color: var(--green-a); }
+    .hero-sub {
+      font-size: clamp(.82rem, 1.4vw, .98rem);
+      color: var(--text-s); margin-bottom: 34px;
+      font-weight: 300; letter-spacing: .03em;
+    }
+    .hero-ctas { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
+
+    /* ============================================================
+       VALUE STRIP
+    ============================================================ */
+    .vstrip {
+      background: var(--bg-card);
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      padding: 38px 0;
+    }
+    .vstrip-inner {
+      display: flex; align-items: center; justify-content: center;
+      gap: 44px; flex-wrap: wrap;
+    }
+    .vstrip-item { display: flex; align-items: center; gap: 11px; font-size: .78rem; color: var(--text-s); }
+    .vstrip-icon { color: var(--green-a); font-size: 1.05rem; }
+    .vstrip-sep  { width: 1px; height: 22px; background: var(--border); }
+
+    /* ============================================================
+       SECTION SHARED
+    ============================================================ */
+    .section { padding: 96px 0; }
+    .sec-header { text-align: center; margin-bottom: 60px; }
+    .sec-header h2 { color: var(--text); margin-bottom: 16px; }
+    .sec-header p  { font-size: .93rem; color: var(--text-s); max-width: 540px; margin: 0 auto; line-height: 1.8; }
+
+    /* ============================================================
+       PROMISE / ONE STOP SHOP
+    ============================================================ */
+    .promise { background: var(--bg-dark); padding: 96px 0; }
+    .promise-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 76px; align-items: center; }
+    .promise-text h2 { margin-bottom: 22px; color: var(--text); }
+    .promise-text p  { font-size: .93rem; color: var(--text-s); line-height: 1.8; }
+    .promise-text .btn { margin-top: 20px; }
+    .feat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .feat {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--rl);
+      padding: 22px; transition: var(--t);
+    }
+    .feat:hover { border-color: var(--border-h); background: var(--bg-card-h); }
+    .feat-icon  { font-size: 1.4rem; margin-bottom: 10px; }
+    .feat h4 {
+      font-family: 'Montserrat', sans-serif; font-size: .78rem;
+      font-weight: 600; color: var(--text); margin-bottom: 5px;
+    }
+    .feat p { font-size: .76rem; color: var(--text-m); line-height: 1.6; margin: 0; }
+
+    /* ============================================================
+       SERVICES
+    ============================================================ */
+    .services { background: var(--bg-deep); padding: 96px 0; }
+    .svc-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+    .svc {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--rl);
+      padding: 38px 30px; position: relative; overflow: hidden; transition: var(--t);
+    }
+    .svc::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: transparent; transition: background .35s;
+    }
+    .svc:hover { border-color: var(--border-h); transform: translateY(-4px); box-shadow: var(--shadow-l); }
+    .svc:hover::before { background: var(--green-a); }
+    .svc-star { border-color: var(--green-a); background: linear-gradient(135deg, var(--bg-card) 0%, rgba(28,107,60,.15) 100%); }
+    .svc-star::before { background: var(--green-a); }
+    .svc-badge {
+      display: inline-block; background: var(--green-a); color: var(--bg-deep);
+      font-size: .58rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 2px; margin-bottom: 18px;
+    }
+    .svc-icon { font-size: 2rem; margin-bottom: 14px; }
+    .svc h3  { color: var(--text); margin-bottom: 8px; font-size: 1.55rem; }
+    .svc-sub { font-size: .76rem; color: var(--green-a); letter-spacing: .05em; margin-bottom: 14px; display: block; }
+    .svc > p { font-size: .84rem; color: var(--text-s); line-height: 1.7; margin-bottom: 22px; }
+    .svc-list { list-style: none; margin-bottom: 28px; }
+    .svc-list li {
+      display: flex; align-items: flex-start; gap: 9px;
+      font-size: .78rem; color: var(--text-s); padding: 5px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .svc-list li:last-child { border-bottom: none; }
+    .svc-list li::before { content: '✓'; color: var(--green-a); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+    .svc-price-from { font-size: .68rem; color: var(--text-m); text-transform: uppercase; letter-spacing: .1em; display: block; margin-bottom: 3px; }
+    .svc-price-amt  { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--text); }
+    .svc-price-amt sup { font-size: .9rem; color: var(--text-s); }
+    .svc .btn { width: 100%; justify-content: center; margin-top: 18px; }
+
+    /* ============================================================
+       CTA BAND
+    ============================================================ */
+    .cta-band {
+      background: linear-gradient(135deg, var(--green) 0%, #0f3a20 100%);
+      border-top: 1px solid rgba(39,201,109,.2); border-bottom: 1px solid rgba(39,201,109,.2);
+      padding: 64px 0; text-align: center;
+    }
+    .cta-band h2 { color: var(--text); margin-bottom: 14px; }
+    .cta-band p  { color: rgba(242,237,227,.7); font-size: .93rem; margin-bottom: 30px; max-width: 490px; margin-left: auto; margin-right: auto; }
+    .cta-band .btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+    /* ============================================================
+       GALLERY
+    ============================================================ */
+    .gallery { background: var(--bg-dark); padding: 96px 0; }
+    .gal-tabs {
+      display: flex; align-items: center; justify-content: center;
+      gap: 4px; margin-bottom: 44px; flex-wrap: wrap;
+    }
+    .gal-tab {
+      background: transparent; border: 1px solid var(--border); color: var(--text-m);
+      padding: 9px 22px;
+      font-family: 'Montserrat', sans-serif; font-size: .7rem; font-weight: 500;
+      letter-spacing: .1em; text-transform: uppercase; border-radius: 2px;
+      cursor: pointer; transition: var(--t);
+    }
+    .gal-tab:hover, .gal-tab.active { background: var(--green-a); border-color: var(--green-a); color: var(--bg-deep); }
+    .gal-panel  { display: none; }
+    .gal-panel.active { display: block; }
+    .gal-grid {
+      display: grid;
+      grid-template-columns: repeat(12,1fr);
+      grid-template-rows: repeat(2, 210px);
+      gap: 7px;
+    }
+    .gi { border-radius: var(--r); overflow: hidden; position: relative; cursor: pointer; }
+    .gi:nth-child(1) { grid-column: span 5; grid-row: span 2; }
+    .gi:nth-child(2) { grid-column: span 4; }
+    .gi:nth-child(3) { grid-column: span 3; }
+    .gi:nth-child(4) { grid-column: span 3; }
+    .gi:nth-child(5) { grid-column: span 4; }
+    .gi-bg {
+      position: absolute; inset: 0;
+      background-size: cover; background-position: center;
+      transition: transform .5s ease;
+    }
+    .gi:hover .gi-bg { transform: scale(1.06); }
+    .gi-ov {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(5,16,10,.72) 0%, transparent 55%);
+      opacity: 0; transition: opacity .35s;
+      display: flex; align-items: flex-end; padding: 14px;
+    }
+    .gi:hover .gi-ov { opacity: 1; }
+    .gi-lbl { font-size: .68rem; color: rgba(255,255,255,.82); letter-spacing: .1em; text-transform: uppercase; }
+
+    /* Gradient placeholders per category */
+    .gw1{background:linear-gradient(135deg,#1a4731,#2d6a4f,#0f2d1e)}
+    .gw2{background:linear-gradient(135deg,#0f2d1e,#1a3a28,#2d5a3d)}
+    .gw3{background:linear-gradient(135deg,#1c3a25,#2a5c3a)}
+    .gw4{background:linear-gradient(135deg,#0d2016,#1a3a28)}
+    .gw5{background:linear-gradient(135deg,#183323,#25523a)}
+    .gq1{background:linear-gradient(135deg,#2a1a3a,#4a2d6a,#1a0d2d)}
+    .gq2{background:linear-gradient(135deg,#1a0d2d,#2d1a4a,#4a2d6a)}
+    .gq3{background:linear-gradient(135deg,#251a35,#3d2a5c)}
+    .gq4{background:linear-gradient(135deg,#1a0f28,#2a1a3a)}
+    .gq5{background:linear-gradient(135deg,#1f1530,#3a2552)}
+    .gc1{background:linear-gradient(135deg,#1a1a2e,#2d2d4a,#0f0f2d)}
+    .gc2{background:linear-gradient(135deg,#0f0f2d,#1a1a3a,#2d2d4a)}
+    .gc3{background:linear-gradient(135deg,#151525,#25253d)}
+    .gc4{background:linear-gradient(135deg,#0f0f28,#1a1a35)}
+    .gc5{background:linear-gradient(135deg,#181830,#28284a)}
+    .gp1{background:linear-gradient(135deg,#2d1a0f,#4a2d1a,#1a0f0d)}
+    .gp2{background:linear-gradient(135deg,#1a0f0d,#2d1a10,#4a2d1a)}
+    .gp3{background:linear-gradient(135deg,#231512,#3d2518)}
+    .gp4{background:linear-gradient(135deg,#180e0b,#2a1812)}
+    .gp5{background:linear-gradient(135deg,#1c1210,#2e1e18)}
+
+    .gal-desc { text-align: center; margin-top: 28px; padding-top: 28px; border-top: 1px solid var(--border); }
+    .gal-desc p { font-size: .84rem; color: var(--text-s); max-width: 460px; margin: 0 auto 16px; }
+
+    /* ============================================================
+       TESTIMONIALS
+    ============================================================ */
+    .testi { background: var(--bg-deep); padding: 96px 0; }
+    .testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+    .tcard {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--rl);
+      padding: 34px 26px; transition: var(--t);
+    }
+    .tcard:hover { border-color: var(--border-h); transform: translateY(-3px); }
+    .tquote { font-size: 2.4rem; line-height: 1; color: var(--green-a); font-family: 'Cormorant Garamond', serif; margin-bottom: 14px; opacity: .55; }
+    .tstars  { color: var(--gold); font-size: .78rem; letter-spacing: 2px; margin-bottom: 14px; }
+    .ttext   { font-size: .86rem; color: var(--text-s); line-height: 1.8; font-style: italic; margin-bottom: 22px; }
+    .tauthor { display: flex; align-items: center; gap: 11px; padding-top: 14px; border-top: 1px solid var(--border); }
+    .tavatar {
+      width: 38px; height: 38px; border-radius: 50%; background: var(--green);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: var(--text); flex-shrink: 0;
+    }
+    .tauthor strong { display: block; font-size: .8rem; font-weight: 600; color: var(--text); }
+    .tauthor span   { font-size: .7rem; color: var(--text-m); letter-spacing: .04em; }
+
+    /* ============================================================
+       TRUST BAR
+    ============================================================ */
+    .trust { background: var(--bg-card); border-bottom: 1px solid var(--border); padding: 30px 0; }
+    .trust-inner { display: flex; align-items: center; justify-content: center; gap: 38px; flex-wrap: wrap; }
+    .trust-item { display: flex; align-items: center; gap: 9px; font-size: .76rem; color: var(--text-s); }
+    .trust-icon { color: var(--green-a); font-size: .95rem; }
+
+    /* ============================================================
+       PRICING
+    ============================================================ */
+    .pricing { background: var(--bg-dark); padding: 96px 0; }
+    .price-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; align-items: start; }
+    .pcard {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--rl);
+      padding: 38px 30px; position: relative; transition: var(--t);
+    }
+    .pcard:hover { border-color: var(--border-h); transform: translateY(-4px); }
+    .pcard-star {
+      border-color: var(--green-a);
+      background: linear-gradient(135deg, var(--bg-card) 0%, rgba(28,107,60,.13) 100%);
+      transform: scale(1.03);
+    }
+    .pcard-star:hover { transform: scale(1.03) translateY(-4px); }
+    .pbadge {
+      position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+      background: var(--green-a); color: var(--bg-deep);
+      font-size: .58rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
+      padding: 4px 16px; border-radius: 20px; white-space: nowrap;
+    }
+    .picon { font-size: 1.9rem; margin-bottom: 14px; }
+    .pcard h3 { color: var(--text); margin-bottom: 5px; }
+    .psub { font-size: .73rem; color: var(--green-a); letter-spacing: .04em; margin-bottom: 22px; display: block; }
+    .pamt { margin-bottom: 26px; padding-bottom: 22px; border-bottom: 1px solid var(--border); }
+    .pfrom { font-size: .66rem; color: var(--text-m); text-transform: uppercase; letter-spacing: .1em; display: block; margin-bottom: 4px; }
+    .pprice { font-family: 'Cormorant Garamond', serif; font-size: 2.7rem; font-weight: 300; color: var(--text); line-height: 1; }
+    .pprice sup { font-size: 1.1rem; color: var(--text-s); }
+    .pnote  { font-size: .7rem; color: var(--text-m); margin-top: 4px; }
+    .plist  { list-style: none; margin-bottom: 28px; }
+    .plist li {
+      display: flex; align-items: flex-start; gap: 9px;
+      font-size: .78rem; color: var(--text-s); padding: 6px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .plist li:last-child { border-bottom: none; }
+    .plist li::before { content: '✓'; color: var(--green-a); font-weight: 700; flex-shrink: 0; }
+    .plist .no { color: var(--text-m); }
+    .plist .no::before { content: '–'; color: var(--text-m); }
+    .pcard .btn { width: 100%; justify-content: center; }
+
+    /* ============================================================
+       CONTACT
+    ============================================================ */
+    .contact { background: var(--bg-deep); padding: 96px 0; }
+    .contact-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 76px; align-items: start; }
+    .cinfo h2  { color: var(--text); margin-bottom: 18px; }
+    .cinfo > p { font-size: .9rem; color: var(--text-s); line-height: 1.8; margin-bottom: 14px; }
+    .cinfo em  { font-style: italic; font-size: .84rem; color: var(--text-m); }
+    .cdetails  { display: flex; flex-direction: column; gap: 14px; margin: 24px 0; }
+    .cdet {
+      display: flex; align-items: center; gap: 11px;
+      font-size: .83rem; color: var(--text-s);
+    }
+    .cdet-ic {
+      width: 34px; height: 34px; border: 1px solid var(--border); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--green-a); font-size: .88rem; flex-shrink: 0;
+    }
+    .csoc { display: flex; gap: 10px; }
+    .soclink {
+      width: 38px; height: 38px; border: 1px solid var(--border); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--text-s); font-size: .82rem; transition: var(--t);
+    }
+    .soclink:hover { border-color: var(--green-a); color: var(--green-a); }
+    .cform {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: var(--rl); padding: 38px;
+    }
+    .cform h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; color: var(--text); margin-bottom: 26px; }
+    .frow { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .fg  { margin-bottom: 14px; }
+    .fg label {
+      display: block; font-size: .68rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase; color: var(--text-m); margin-bottom: 5px;
+    }
+    .fg input, .fg select, .fg textarea {
+      width: 100%; background: var(--bg-deep); border: 1px solid var(--border);
+      border-radius: var(--r); padding: 11px 15px;
+      font-family: 'Montserrat', sans-serif; font-size: .83rem; color: var(--text);
+      transition: border-color .25s; -webkit-appearance: none;
+    }
+    .fg input:focus, .fg select:focus, .fg textarea:focus { outline: none; border-color: var(--green-a); }
+    .fg select option { background: var(--bg-card); }
+    .fg textarea { resize: vertical; min-height: 96px; }
+    .fsend { width: 100%; justify-content: center; padding: 15px; font-size: .78rem; margin-top: 6px; }
+    .fnote { text-align: center; font-size: .7rem; color: var(--text-m); margin-top: 10px; }
+    .fsuccess {
+      display: none; background: rgba(39,201,109,.1); border: 1px solid var(--green-a);
+      border-radius: var(--rl); padding: 22px; text-align: center; color: var(--green-a); font-size: .88rem;
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .footer { background: var(--bg-dark); border-top: 1px solid var(--border); padding: 60px 0 28px; }
+    .footer-top {
+      display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 36px; margin-bottom: 44px;
+    }
+    .fbrand h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; color: var(--text); margin-bottom: 10px; }
+    .fbrand p  { font-size: .8rem; color: var(--text-m); line-height: 1.7; margin-bottom: 16px; }
+    .fcol h4 {
+      font-family: 'Montserrat', sans-serif; font-size: .66rem; font-weight: 700;
+      letter-spacing: .2em; text-transform: uppercase; color: var(--text-m); margin-bottom: 14px;
+    }
+    .fcol ul  { list-style: none; }
+    .fcol li  { margin-bottom: 7px; }
+    .fcol a   { font-size: .8rem; color: var(--text-m); transition: color .25s; }
+    .fcol a:hover { color: var(--green-a); }
+    .footer-bot {
+      padding-top: 22px; border-top: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 10px;
+    }
+    .footer-bot p { font-size: .7rem; color: var(--text-m); margin: 0; }
+    .footer-bot a { color: var(--green-a); }
+
+    /* ============================================================
+       ANIMATIONS
+    ============================================================ */
+    .fi { opacity: 0; transform: translateY(22px); transition: opacity .62s ease, transform .62s ease; }
+    .fi.vis { opacity: 1; transform: translateY(0); }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 1024px) {
+      .promise-inner { grid-template-columns: 1fr; gap: 44px; }
+      .contact-inner { grid-template-columns: 1fr; }
+      .footer-top    { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav { padding: 15px 18px; }
+      .nav.scrolled { padding: 11px 18px; }
+      .nav-links { display: none; }
+      .nav-burger { display: flex; }
+      .hero { flex-direction: column; height: auto; min-height: 100vh; }
+      .panel { flex: none; height: 46vh; min-height: 260px; }
+      .panel:hover { flex: none; }
+      .panel-content { padding: 36px 22px; }
+      .panel-dj .panel-content { text-align: left; padding: 36px 22px; }
+      .panel-dj .panel-desc { margin-left: 0; }
+      .hero-split { top: 46vh; left: 0; right: 0; bottom: auto; width: 100%; height: 2px; transform: translateY(-50%); }
+      .split-line { width: 100%; height: 1px; top: 50%; left: 0; right: 0; bottom: auto; transform: none; }
+      .split-brand { top: 46vh; }
+      .hero-foot { padding: 30px 18px 46px; }
+      .svc-grid  { grid-template-columns: 1fr; }
+      .price-grid{ grid-template-columns: 1fr; }
+      .pcard-star{ transform: scale(1); }
+      .testi-grid{ grid-template-columns: 1fr; }
+      .gal-grid  { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .gi { grid-column: span 1 !important; grid-row: span 1 !important; height: 170px; }
+      .frow      { grid-template-columns: 1fr; }
+      .footer-top{ grid-template-columns: 1fr; }
+      .footer-bot{ flex-direction: column; text-align: center; }
+      .trust-inner { gap: 18px; }
+      .vstrip-inner{ gap: 18px; }
+      .vstrip-sep  { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAVIGATION
+============================================================ -->
+<nav class="nav" id="nav">
+  <div class="nav-logo">
+    <span class="logo-foto">FOTO</span>
+    <span class="logo-name">AURA</span>
+    <span class="logo-dj">DJ</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#galeria">Galería</a></li>
+    <li><a href="#paquetes">Paquetes</a></li>
+    <li><a href="#testimonios">Testimonios</a></li>
+    <li><a href="#contacto" class="nav-cta">Consultar disponibilidad</a></li>
+  </ul>
+  <button class="nav-burger" id="burger" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" id="mobClose">✕</button>
+  <a href="#servicios"   class="ml">Servicios</a>
+  <a href="#galeria"     class="ml">Galería</a>
+  <a href="#paquetes"    class="ml">Paquetes</a>
+  <a href="#testimonios" class="ml">Testimonios</a>
+  <a href="#contacto" class="btn btn-primary ml">Consultar disponibilidad</a>
+</div>
+
+<!-- ============================================================
+     HERO — SPLIT VIEW
+============================================================ -->
+<section class="hero" id="inicio">
+
+  <!-- LEFT: PHOTOGRAPHY -->
+  <div class="panel panel-photo">
+    <div class="panel-bg"></div>
+    <div class="panel-content">
+      <span class="panel-eyebrow">Fotografía</span>
+      <h2 class="panel-title">Cada<br><em>momento,</em><br>eterno.</h2>
+      <p class="panel-desc">Captamos la emoción, la luz y la esencia de tu boda o evento.</p>
+    </div>
+  </div>
+
+  <!-- CENTER SPLIT BRAND -->
+  <div class="hero-split">
+    <div class="split-line"></div>
+    <div class="split-brand">
+      <div class="split-name">AURA</div>
+      <span class="split-sub">Foto · DJ · Denia</span>
+    </div>
+  </div>
+
+  <!-- RIGHT: DJ -->
+  <div class="panel panel-dj">
+    <div class="panel-bg"></div>
+    <div class="panel-content">
+      <span class="panel-eyebrow">DJ Profesional</span>
+      <h2 class="panel-title">Que la<br><em>música</em><br>no pare.</h2>
+      <p class="panel-desc">Sets personalizados para que tu fiesta sea inolvidable.</p>
+    </div>
+  </div>
+
+  <!-- BOTTOM OVERLAY -->
+  <div class="hero-foot">
+    <h1 class="hero-h1">Tu fotógrafo y DJ<br>en <em>un solo contrato</em></h1>
+    <p class="hero-sub">Bodas y fiestas perfectas en Denia y Costa Blanca — sin estrés, con estilo</p>
+    <div class="hero-ctas">
+      <a href="#contacto" class="btn btn-primary">Consultar disponibilidad</a>
+      <a href="#galeria"  class="btn btn-outline">Ver nuestros trabajos</a>
+    </div>
+  </div>
+
+</section>
+
+<!-- VALUE STRIP -->
+<div class="vstrip">
+  <div class="container">
+    <div class="vstrip-inner">
+      <div class="vstrip-item"><span class="vstrip-icon">📍</span><span>Denia · Costa Blanca · Alicante</span></div>
+      <div class="vstrip-sep"></div>
+      <div class="vstrip-item"><span class="vstrip-icon">🎯</span><span>Fotógrafo + DJ en un solo contrato</span></div>
+      <div class="vstrip-sep"></div>
+      <div class="vstrip-item"><span class="vstrip-icon">💬</span><span>Atención personalizada en español</span></div>
+      <div class="vstrip-sep"></div>
+      <div class="vstrip-item"><span class="vstrip-icon">🌿</span><span>+150 eventos realizados</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     PROMISE / ONE STOP SHOP
+============================================================ -->
+<section class="promise" id="nosotros">
+  <div class="container">
+    <div class="promise-inner">
+      <div class="promise-text fi">
+        <span class="label">Por qué elegirnos</span>
+        <h2>Un solo contrato.<br>Mismo estilo.<br>Misma energía.</h2>
+        <p>Imagina que el día de tu boda no tienes que coordinar a tres proveedores distintos. Tu fotógrafo y tu DJ comparten la misma visión, el mismo ritmo y la misma pasión por hacer tu fiesta perfecta.</p>
+        <p>Eso es AURA. Un equipo con un solo objetivo: que vivas el mejor día de tu vida sin preocuparte de nada más.</p>
+        <a href="#contacto" class="btn btn-primary">Solicitar presupuesto sin compromiso</a>
+      </div>
+      <div class="feat-grid fi">
+        <div class="feat"><div class="feat-icon">🎯</div><h4>Sin estrés de coordinación</h4><p>Un punto de contacto para todo. Menos emails, menos nervios.</p></div>
+        <div class="feat"><div class="feat-icon">🎨</div><h4>Estilo coherente</h4><p>Las fotos y la música hablan el mismo idioma visual y emocional.</p></div>
+        <div class="feat"><div class="feat-icon">💰</div><h4>Ahorra tiempo y dinero</h4><p>Pack combinado con precio especial. Sin sorpresas el día B.</p></div>
+        <div class="feat"><div class="feat-icon">🌟</div><h4>Experiencia local</h4><p>Conocemos Denia y Costa Blanca como nadie. Los mejores rincones para tus fotos.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     SERVICES
+============================================================ -->
+<section class="services" id="servicios">
+  <div class="container">
+    <div class="sec-header fi">
+      <div class="ornament"><div class="ornament-line"></div><div class="ornament-dot"></div><div class="ornament-line"></div></div>
+      <span class="label">Nuestros servicios</span>
+      <h2>Lo que ofrecemos</h2>
+      <p>Desde una sesión íntima de retratos hasta una gran boda con DJ y fotografía. Cada servicio diseñado para superar tus expectativas.</p>
+    </div>
+    <div class="svc-grid">
+
+      <!-- PHOTOGRAPHY -->
+      <div class="svc fi">
+        <div class="svc-icon">📷</div>
+        <h3>Fotografía</h3>
+        <span class="svc-sub">Bodas · Quinceañeras · Eventos · Retratos</span>
+        <p>Fotos que cuentan tu historia como nadie más puede contarla. Estilo editorial, cálido y emotivo. Cada imagen captura lo que sentiste ese día.</p>
+        <ul class="svc-list">
+          <li>Cobertura completa del evento (8–12 h)</li>
+          <li>+300 fotos editadas en alta resolución</li>
+          <li>Galería digital privada</li>
+          <li>Sesión preboda opcional</li>
+          <li>Entrega en 4–6 semanas</li>
+          <li>Licencia de uso personal</li>
+        </ul>
+        <span class="svc-price-from">Desde</span>
+        <div class="svc-price-amt"><sup>€</sup>1.200</div>
+        <a href="#contacto" class="btn btn-outline">Pedir presupuesto</a>
+      </div>
+
+      <!-- DJ -->
+      <div class="svc fi">
+        <div class="svc-icon">🎧</div>
+        <h3>DJ Profesional</h3>
+        <span class="svc-sub">Bodas · Quinceañeras · Eventos Corporativos</span>
+        <p>Música que conecta con tu historia y tu gente. Sets personalizados que hacen que nadie quiera sentarse, desde el vals hasta las 4 de la mañana.</p>
+        <ul class="svc-list">
+          <li>Set personalizado según tus gustos</li>
+          <li>Equipo de sonido profesional</li>
+          <li>Iluminación ambiental LED incluida</li>
+          <li>Ceremonia + cóctel + fiesta</li>
+          <li>Coordinación con el venue</li>
+          <li>Disponible hasta las 4:00 h</li>
+        </ul>
+        <span class="svc-price-from">Desde</span>
+        <div class="svc-price-amt"><sup>€</sup>800</div>
+        <a href="#contacto" class="btn btn-outline">Pedir presupuesto</a>
+      </div>
+
+      <!-- FULL EXPERIENCE -->
+      <div class="svc svc-star fi">
+        <div class="svc-badge">Más popular ✨</div>
+        <div class="svc-icon">🌟</div>
+        <h3>La Experiencia Completa</h3>
+        <span class="svc-sub">Fotógrafo + DJ en un solo contrato</span>
+        <p>La combinación perfecta para tu boda o fiesta. Un equipo, una visión, un día memorable. Contrata los dos servicios y ahorra tiempo, dinero y energía.</p>
+        <ul class="svc-list">
+          <li>Todo lo incluido en Fotografía</li>
+          <li>Todo lo incluido en DJ</li>
+          <li>Sesión preboda gratuita</li>
+          <li>Reunión de planificación previa</li>
+          <li>Álbum impreso de lujo (opcional)</li>
+          <li>Descuento exclusivo pack combinado</li>
+        </ul>
+        <span class="svc-price-from">Desde</span>
+        <div class="svc-price-amt"><sup>€</sup>1.800</div>
+        <a href="#contacto" class="btn btn-primary">Reservar la experiencia</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MID-PAGE CTA BAND -->
+<div class="cta-band">
+  <div class="container">
+    <h2>¿Tienes fecha en mente?</h2>
+    <p>Las fechas se reservan con meses de antelación. Consulta ahora si tu día está disponible.</p>
+    <div class="btns">
+      <a href="#contacto" class="btn btn-primary">Consultar disponibilidad</a>
+      <a href="#paquetes"  class="btn btn-outline">Ver paquetes y precios</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     GALLERY
+============================================================ -->
+<section class="gallery" id="galeria">
+  <div class="container">
+    <div class="sec-header fi">
+      <div class="ornament"><div class="ornament-line"></div><div class="ornament-dot"></div><div class="ornament-line"></div></div>
+      <span class="label">Galería</span>
+      <h2>Nuestros trabajos</h2>
+      <p>Cada evento es único. Aquí tienes una muestra de lo que creamos juntos.</p>
+    </div>
+    <div class="gal-tabs">
+      <button class="gal-tab active" data-tab="bodas">Bodas</button>
+      <button class="gal-tab" data-tab="quince">Quinceañeras</button>
+      <button class="gal-tab" data-tab="corp">Eventos Corporativos</button>
+      <button class="gal-tab" data-tab="retrato">Retratos</button>
+    </div>
+
+    <div class="gal-panel active" id="tab-bodas">
+      <div class="gal-grid">
+        <div class="gi"><div class="gi-bg gw1"></div><div class="gi-ov"><span class="gi-lbl">Boda en la playa · Denia</span></div></div>
+        <div class="gi"><div class="gi-bg gw2"></div><div class="gi-ov"><span class="gi-lbl">Boda íntima · Jávea</span></div></div>
+        <div class="gi"><div class="gi-bg gw3"></div><div class="gi-ov"><span class="gi-lbl">Ceremonia civil · Alicante</span></div></div>
+        <div class="gi"><div class="gi-bg gw4"></div><div class="gi-ov"><span class="gi-lbl">Boda de destino · Costa Blanca</span></div></div>
+        <div class="gi"><div class="gi-bg gw5"></div><div class="gi-ov"><span class="gi-lbl">Celebración al aire libre</span></div></div>
+      </div>
+      <div class="gal-desc">
+        <p>Bodas en Denia, Costa Blanca y toda la provincia de Alicante. Desde ceremonias íntimas hasta grandes celebraciones.</p>
+        <a href="#contacto" class="btn btn-outline">Reserva tu boda</a>
+      </div>
+    </div>
+
+    <div class="gal-panel" id="tab-quince">
+      <div class="gal-grid">
+        <div class="gi"><div class="gi-bg gq1"></div><div class="gi-ov"><span class="gi-lbl">Quinceañera · Denia</span></div></div>
+        <div class="gi"><div class="gi-bg gq2"></div><div class="gi-ov"><span class="gi-lbl">Fiesta hispana · Alicante</span></div></div>
+        <div class="gi"><div class="gi-bg gq3"></div><div class="gi-ov"><span class="gi-lbl">Celebración familiar</span></div></div>
+        <div class="gi"><div class="gi-bg gq4"></div><div class="gi-ov"><span class="gi-lbl">Quinceañera íntima</span></div></div>
+        <div class="gi"><div class="gi-bg gq5"></div><div class="gi-ov"><span class="gi-lbl">Fiesta de 15 años · Costa Blanca</span></div></div>
+      </div>
+      <div class="gal-desc">
+        <p>Quinceañeras y fiestas hispanas únicas. Entendemos la tradición y la hacemos brillar con nuestra propia magia.</p>
+        <a href="#contacto" class="btn btn-outline">Reserva tu Quinceañera</a>
+      </div>
+    </div>
+
+    <div class="gal-panel" id="tab-corp">
+      <div class="gal-grid">
+        <div class="gi"><div class="gi-bg gc1"></div><div class="gi-ov"><span class="gi-lbl">Evento corporativo · Alicante</span></div></div>
+        <div class="gi"><div class="gi-bg gc2"></div><div class="gi-ov"><span class="gi-lbl">Cena de empresa · Costa Blanca</span></div></div>
+        <div class="gi"><div class="gi-bg gc3"></div><div class="gi-ov"><span class="gi-lbl">Lanzamiento de producto</span></div></div>
+        <div class="gi"><div class="gi-bg gc4"></div><div class="gi-ov"><span class="gi-lbl">Branding &amp; contenido</span></div></div>
+        <div class="gi"><div class="gi-bg gc5"></div><div class="gi-ov"><span class="gi-lbl">Team building · Denia</span></div></div>
+      </div>
+      <div class="gal-desc">
+        <p>Eventos corporativos con impacto. Fotografía y DJ profesional para tu empresa, en Denia y toda la Costa Blanca.</p>
+        <a href="#contacto" class="btn btn-outline">Reserva tu evento</a>
+      </div>
+    </div>
+
+    <div class="gal-panel" id="tab-retrato">
+      <div class="gal-grid">
+        <div class="gi"><div class="gi-bg gp1"></div><div class="gi-ov"><span class="gi-lbl">Sesión de pareja · Denia</span></div></div>
+        <div class="gi"><div class="gi-bg gp2"></div><div class="gi-ov"><span class="gi-lbl">Retrato familiar · Costa Blanca</span></div></div>
+        <div class="gi"><div class="gi-bg gp3"></div><div class="gi-ov"><span class="gi-lbl">Preboda íntima</span></div></div>
+        <div class="gi"><div class="gi-bg gp4"></div><div class="gi-ov"><span class="gi-lbl">Sesión editorial</span></div></div>
+        <div class="gi"><div class="gi-bg gp5"></div><div class="gi-ov"><span class="gi-lbl">Retrato personal</span></div></div>
+      </div>
+      <div class="gal-desc">
+        <p>Sesiones de retrato íntimas y auténticas. Parejas, familias y marca personal en los rincones más bonitos de la Costa Blanca.</p>
+        <a href="#contacto" class="btn btn-outline">Reserva tu sesión</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     TESTIMONIALS
+============================================================ -->
+<section class="testi" id="testimonios">
+  <div class="container">
+    <div class="sec-header fi">
+      <div class="ornament"><div class="ornament-line"></div><div class="ornament-dot"></div><div class="ornament-line"></div></div>
+      <span class="label">Testimonios</span>
+      <h2>Lo que dicen nuestras parejas</h2>
+      <p>Cada boda, cada fiesta, cada evento es una historia que nos confían. Esto es lo que dicen quienes ya vivieron la experiencia AURA.</p>
+    </div>
+    <div class="testi-grid">
+
+      <div class="tcard fi">
+        <div class="tquote">"</div>
+        <div class="tstars">★★★★★</div>
+        <p class="ttext">Contratar a AURA fue la mejor decisión de nuestra boda. No tener que coordinar un fotógrafo y un DJ por separado fue un alivio enorme. Las fotos son preciosas y la música hizo que nadie se sentara en toda la noche.</p>
+        <div class="tauthor">
+          <div class="tavatar">L</div>
+          <div><strong>Laura y Carlos M.</strong><span>Boda en Denia · Septiembre 2024</span></div>
+        </div>
+      </div>
+
+      <div class="tcard fi">
+        <div class="tquote">"</div>
+        <div class="tstars">★★★★★</div>
+        <p class="ttext">Mi hija cumplía sus quinceañeras y quería algo especial. AURA entendió perfectamente lo que queríamos: una fiesta con mucha alegría, fotos emotivas y música que hizo bailar a toda la familia. Recuerdos para toda la vida.</p>
+        <div class="tauthor">
+          <div class="tavatar">M</div>
+          <div><strong>María González</strong><span>Quinceañera en Alicante · Julio 2024</span></div>
+        </div>
+      </div>
+
+      <div class="tcard fi">
+        <div class="tquote">"</div>
+        <div class="tstars">★★★★★</div>
+        <p class="ttext">Para nuestro evento de empresa buscábamos algo diferente, con clase y con energía. AURA lo consiguió. Las fotos quedaron espectaculares y el set del DJ fue el broche perfecto para la noche. Totalmente recomendados.</p>
+        <div class="tauthor">
+          <div class="tavatar">A</div>
+          <div><strong>Andrés Torralba</strong><span>Evento Corporativo · Valencia · 2024</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust">
+  <div class="container">
+    <div class="trust-inner">
+      <div class="trust-item"><span class="trust-icon">📍</span><span>Fotógrafo y DJ en Denia y Costa Blanca</span></div>
+      <div class="trust-item"><span class="trust-icon">🌍</span><span>Servicios en español para familias hispanas</span></div>
+      <div class="trust-item"><span class="trust-icon">🏖️</span><span>Bodas en la playa y fincas al aire libre</span></div>
+      <div class="trust-item"><span class="trust-icon">⭐</span><span>+150 eventos · 5 estrellas en Google</span></div>
+      <div class="trust-item"><span class="trust-icon">🗺️</span><span>Alicante · Jávea · Benidorm · Valencia</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     PRICING
+============================================================ -->
+<section class="pricing" id="paquetes">
+  <div class="container">
+    <div class="sec-header fi">
+      <div class="ornament"><div class="ornament-line"></div><div class="ornament-dot"></div><div class="ornament-line"></div></div>
+      <span class="label">Paquetes y precios</span>
+      <h2>Elige tu experiencia</h2>
+      <p>Precios transparentes, sin sorpresas. Pídenos un presupuesto personalizado sin compromiso.</p>
+    </div>
+    <div class="price-grid">
+
+      <div class="pcard fi">
+        <div class="picon">📷</div>
+        <h3>Sólo Fotografía</h3>
+        <span class="psub">Para quien ya tiene DJ</span>
+        <div class="pamt">
+          <span class="pfrom">Desde</span>
+          <div class="pprice"><sup>€</sup>1.200</div>
+          <p class="pnote">Presupuesto personalizado según horas</p>
+        </div>
+        <ul class="plist">
+          <li>8 horas de cobertura fotográfica</li>
+          <li>+300 fotos editadas en alta resolución</li>
+          <li>Galería digital privada</li>
+          <li>Álbum impreso (opcional, +precio)</li>
+          <li>Sesión preboda (opcional, +precio)</li>
+          <li class="no">DJ no incluido</li>
+        </ul>
+        <a href="#contacto" class="btn btn-outline">Pedir presupuesto</a>
+      </div>
+
+      <div class="pcard fi">
+        <div class="picon">🎧</div>
+        <h3>Sólo DJ</h3>
+        <span class="psub">Para quien ya tiene fotógrafo</span>
+        <div class="pamt">
+          <span class="pfrom">Desde</span>
+          <div class="pprice"><sup>€</sup>800</div>
+          <p class="pnote">Incluye equipo de sonido e iluminación</p>
+        </div>
+        <ul class="plist">
+          <li>Ceremonia + cóctel + fiesta (hasta 4 h)</li>
+          <li>Equipo de sonido profesional</li>
+          <li>Iluminación ambiental LED</li>
+          <li>Reunión de planificación musical</li>
+          <li>Set 100% personalizado</li>
+          <li class="no">Fotografía no incluida</li>
+        </ul>
+        <a href="#contacto" class="btn btn-outline">Pedir presupuesto</a>
+      </div>
+
+      <div class="pcard pcard-star fi">
+        <div class="pbadge">La más elegida ✨</div>
+        <div class="picon">🌟</div>
+        <h3>La Experiencia Completa</h3>
+        <span class="psub">Fotógrafo + DJ · Todo incluido</span>
+        <div class="pamt">
+          <span class="pfrom">Desde</span>
+          <div class="pprice"><sup>€</sup>1.800</div>
+          <p class="pnote">Ahorro vs. contratar por separado</p>
+        </div>
+        <ul class="plist">
+          <li>Todo lo del pack Fotografía</li>
+          <li>Todo lo del pack DJ</li>
+          <li>Sesión preboda gratuita incluida</li>
+          <li>Reunión de planificación completa</li>
+          <li>Coordinación total del día</li>
+          <li>Precio especial combinado</li>
+        </ul>
+        <a href="#contacto" class="btn btn-primary">Reservar la experiencia</a>
+      </div>
+
+    </div>
+    <p style="text-align:center;color:var(--text-m);font-size:.78rem;margin-top:28px;">
+      ¿No encuentras lo que buscas? <a href="#contacto" style="color:var(--green-a);">Escríbenos</a> y creamos un paquete personalizado para tu evento.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================
+     CONTACT / BOOKING FORM
+============================================================ -->
+<section class="contact" id="contacto">
+  <div class="container">
+    <div class="contact-inner">
+
+      <div class="cinfo fi">
+        <span class="label">Contacto</span>
+        <h2>Hablemos de tu boda o evento</h2>
+        <p>Cuéntanos tu historia. Sin compromiso, sin presión. En 24–48 horas te decimos si tu fecha está disponible y te enviamos un presupuesto personalizado.</p>
+        <p><em>"Nos gusta conocer a cada pareja y familia antes de confirmar. Así aseguramos que somos el equipo perfecto para vosotros."</em></p>
+        <div class="cdetails">
+          <div class="cdet"><div class="cdet-ic">📍</div><span>Denia, Alicante · Costa Blanca, España</span></div>
+          <div class="cdet"><div class="cdet-ic">📱</div><span>+34 600 000 000 (también WhatsApp)</span></div>
+          <div class="cdet"><div class="cdet-ic">📧</div><span>hola@a-aura.com</span></div>
+          <div class="cdet"><div class="cdet-ic">🕐</div><span>Lun–Vie 10:00–19:00 · Sáb bajo cita</span></div>
+        </div>
+        <div class="csoc">
+          <a href="#" class="soclink" aria-label="Instagram">📸</a>
+          <a href="#" class="soclink" aria-label="Facebook">f</a>
+          <a href="#" class="soclink" aria-label="TikTok">♪</a>
+          <a href="#" class="soclink" aria-label="WhatsApp">💬</a>
+        </div>
+      </div>
+
+      <div class="cform fi">
+        <h3>Solicita tu presupuesto gratuito</h3>
+        <div class="fsuccess" id="fsuccess">✓ ¡Mensaje enviado con éxito! Te contactaremos en 24–48 horas.</div>
+        <form id="cformEl" novalidate>
+          <div class="frow">
+            <div class="fg"><label for="fn">Nombre *</label><input type="text" id="fn" name="nombre" placeholder="Tu nombre" required></div>
+            <div class="fg"><label for="fap">Apellidos</label><input type="text" id="fap" name="apellidos" placeholder="Tus apellidos"></div>
+          </div>
+          <div class="frow">
+            <div class="fg"><label for="ftl">Teléfono *</label><input type="tel" id="ftl" name="telefono" placeholder="+34 600 000 000" required></div>
+            <div class="fg"><label for="fem">Correo electrónico *</label><input type="email" id="fem" name="correo" placeholder="tu@correo.com" required></div>
+          </div>
+          <div class="fg">
+            <label for="fte">Tipo de evento *</label>
+            <select id="fte" name="tipo_evento" required>
+              <option value="">Selecciona una opción</option>
+              <option value="boda">Boda</option>
+              <option value="quinceanera">Quinceañera / Fiesta de 15 años</option>
+              <option value="corporativo">Evento corporativo</option>
+              <option value="cumpleanos">Cumpleaños / Fiesta privada</option>
+              <option value="retrato">Sesión de retratos / Preboda</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+          <div class="frow">
+            <div class="fg"><label for="ffd">Fecha aproximada</label><input type="date" id="ffd" name="fecha"></div>
+            <div class="fg">
+              <label for="fpb">Presupuesto orientativo</label>
+              <select id="fpb" name="presupuesto">
+                <option value="">¿Cuánto tienes en mente?</option>
+                <option value="hasta-1000">Hasta 1.000 €</option>
+                <option value="1000-2000">1.000 € – 2.000 €</option>
+                <option value="2000-3500">2.000 € – 3.500 €</option>
+                <option value="mas-3500">Más de 3.500 €</option>
+                <option value="hablar">Prefiero hablarlo</option>
+              </select>
+            </div>
+          </div>
+          <div class="fg">
+            <label for="fmsg">Cuéntanos sobre tu evento</label>
+            <textarea id="fmsg" name="mensaje" placeholder="¿Cuántos invitados? ¿Dónde será? ¿Qué estilo buscas? ¿Hay algo especial que quieras incluir?"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary fsend">Enviar solicitud sin compromiso</button>
+          <p class="fnote">Al enviar este formulario aceptas que nos pongamos en contacto contigo. Sin spam, sin compromiso.</p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA BAND -->
+<div class="cta-band">
+  <div class="container">
+    <h2>Recuerdos que duran toda la vida</h2>
+    <p>Tu boda, tu Quinceañera, tu fiesta — merece el mejor fotógrafo y el mejor DJ de la Costa Blanca.</p>
+    <div class="btns">
+      <a href="#contacto" class="btn btn-primary">Solicitar presupuesto ahora</a>
+      <a href="https://wa.me/34600000000" class="btn btn-outline">💬 WhatsApp directo</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="fbrand">
+        <h3>AURA</h3>
+        <p>Tu fotógrafo y DJ en un solo contrato. Bodas, quinceañeras y eventos en Denia, Costa Blanca y toda la provincia de Alicante.</p>
+        <div style="display:flex;gap:9px;">
+          <a href="#" class="soclink">📸</a>
+          <a href="#" class="soclink">f</a>
+          <a href="#" class="soclink">♪</a>
+        </div>
+      </div>
+      <div class="fcol">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="#servicios">Fotografía de bodas</a></li>
+          <li><a href="#servicios">DJ profesional</a></li>
+          <li><a href="#servicios">Pack completo</a></li>
+          <li><a href="#servicios">Quinceañeras</a></li>
+          <li><a href="#servicios">Eventos corporativos</a></li>
+        </ul>
+      </div>
+      <div class="fcol">
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#paquetes">Paquetes</a></li>
+          <li><a href="#testimonios">Testimonios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="fcol">
+        <h4>Zona de trabajo</h4>
+        <ul>
+          <li><a href="#contacto">Denia</a></li>
+          <li><a href="#contacto">Costa Blanca</a></li>
+          <li><a href="#contacto">Jávea / Xàbia</a></li>
+          <li><a href="#contacto">Alicante</a></li>
+          <li><a href="#contacto">Benidorm</a></li>
+          <li><a href="#contacto">Valencia</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <p>© 2025 AURA — Fotografía &amp; DJ · Denia, Costa Blanca · <a href="mailto:hola@a-aura.com">hola@a-aura.com</a></p>
+      <p>Todos los derechos reservados · <a href="https://a-aura.com">a-aura.com</a></p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+<script>
+  /* NAV SCROLL */
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 50);
+  }, { passive: true });
+
+  /* MOBILE MENU */
+  const burger  = document.getElementById('burger');
+  const mobMenu = document.getElementById('mobMenu');
+  const mobClose= document.getElementById('mobClose');
+  burger.addEventListener('click', () => { mobMenu.classList.add('open'); document.body.style.overflow = 'hidden'; });
+  function closeMob() { mobMenu.classList.remove('open'); document.body.style.overflow = ''; }
+  mobClose.addEventListener('click', closeMob);
+  document.querySelectorAll('.mob-menu .ml').forEach(l => l.addEventListener('click', closeMob));
+
+  /* GALLERY TABS */
+  document.querySelectorAll('.gal-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.gal-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.gal-panel').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+    });
+  });
+
+  /* FADE-IN OBSERVER */
+  const fiEls = document.querySelectorAll('.fi');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+  fiEls.forEach(el => io.observe(el));
+
+  /* CONTACT FORM */
+  document.getElementById('cformEl').addEventListener('submit', e => {
+    e.preventDefault();
+    const f = e.target;
+    const nombre = f.nombre.value.trim();
+    const tel    = f.telefono.value.trim();
+    const email  = f.correo.value.trim();
+    const tipo   = f.tipo_evento.value;
+    if (!nombre || !tel || !email || !tipo) {
+      alert('Por favor, rellena los campos obligatorios: nombre, teléfono, correo y tipo de evento.');
+      return;
+    }
+    f.style.display = 'none';
+    document.getElementById('fsuccess').style.display = 'block';
+  });
+
+  /* SMOOTH SCROLL */
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+    });
+  });
+
+  /* HERO PARTICLE DECORATION */
+  (function() {
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes floatP {
+        0%,100%{transform:translateY(0) translateX(0);opacity:.25}
+        33%{transform:translateY(-10px) translateX(5px);opacity:.55}
+        66%{transform:translateY(-16px) translateX(-4px);opacity:.35}
+      }`;
+    document.head.appendChild(style);
+    document.querySelectorAll('.panel').forEach(panel => {
+      for (let i = 0; i < 7; i++) {
+        const p = document.createElement('div');
+        p.style.cssText = `position:absolute;width:${Math.random()*2+1}px;height:${Math.random()*2+1}px;
+          background:rgba(39,201,109,${Math.random()*.35+.1});border-radius:50%;
+          left:${Math.random()*100}%;top:${Math.random()*100}%;pointer-events:none;z-index:1;
+          animation:floatP ${Math.random()*6+5}s ease-in-out infinite;
+          animation-delay:${Math.random()*4}s;`;
+        panel.appendChild(p);
+      }
+    });
+  })();
+</script>
+</body>
+</html>
