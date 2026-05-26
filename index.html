@@ -3,647 +3,1014 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AURA — Fotógrafo &amp; DJ | Bodas y Eventos en Denia, Costa Blanca</title>
-  <meta name="description" content="Tu fotógrafo y DJ en un solo contrato. Bodas, quinceañeras y eventos en Denia y Costa Blanca. Presupuesto sin compromiso. Servicios en español.">
-  <meta name="keywords" content="fotógrafo bodas Denia, DJ bodas Costa Blanca, fotógrafo DJ boda España, quinceañera Alicante, eventos corporativos Denia">
-  <meta property="og:title" content="AURA — Fotógrafo &amp; DJ | Bodas en Denia">
-  <meta property="og:description" content="Tu fotógrafo y DJ en un solo contrato. La experiencia completa para tu boda o fiesta en Costa Blanca.">
-  <meta property="og:url" content="https://a-aura.com">
-  <meta property="og:type" content="website">
+  <title>AURA — Fotógrafo & DJ | Bodas y Eventos en Denia, Costa Blanca</title>
+  <meta name="description" content="Tu fotógrafo y DJ en un solo contrato. Bodas, quinceañeras y eventos en Denia y Costa Blanca. Presupuesto sin compromiso.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    /* ============================================================
-       VARIABLES & RESET
-    ============================================================ */
-    :root {
-      --bg-deep:       #05100a;
-      --bg-dark:       #0b1d10;
-      --bg-card:       #0f2015;
-      --bg-card-h:     #142a1a;
-      --green:         #1c6b3c;
-      --green-a:       #27c96d;
-      --green-glow:    rgba(39,201,109,.22);
-      --gold:          #c4a44a;
-      --gold-l:        #dfc06a;
-      --text:          #f2ede3;
-      --text-s:        #8da48f;
-      --text-m:        #4a5e4c;
-      --border:        rgba(39,201,109,.12);
-      --border-h:      rgba(39,201,109,.38);
-      --r:             4px;
-      --rl:            8px;
-      --shadow:        0 4px 24px rgba(0,0,0,.4);
-      --shadow-l:      0 8px 48px rgba(0,0,0,.6);
-      --ease:          cubic-bezier(.4,0,.2,1);
-      --t:             all .35s cubic-bezier(.4,0,.2,1);
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: var(--bg-deep);
-      color: var(--text);
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 300;
-      font-size: 16px;
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-    h1,h2,h3,h4 { font-family: 'Cormorant Garamond', serif; font-weight: 400; line-height: 1.12; }
-    h1 { font-size: clamp(2.6rem, 5.5vw, 5rem); }
-    h2 { font-size: clamp(1.9rem, 3.8vw, 3rem); }
-    h3 { font-size: clamp(1.3rem, 2.4vw, 1.9rem); }
-    p { margin-bottom: 1rem; }
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-    .label {
-      font-family: 'Montserrat', sans-serif;
-      font-size: .68rem; font-weight: 600;
-      letter-spacing: .3em; text-transform: uppercase;
-      color: var(--green-a); margin-bottom: 1rem; display: block;
-    }
-    .ornament {
-      display: flex; align-items: center; gap: 12px;
-      justify-content: center; margin-bottom: 14px;
-    }
-    .ornament-line { width: 38px; height: 1px; background: var(--green-a); opacity: .45; }
-    .ornament-dot  { width: 4px; height: 4px; border-radius: 50%; background: var(--green-a); }
 
-    /* ============================================================
-       BUTTONS
-    ============================================================ */
-    .btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 14px 32px;
-      font-family: 'Montserrat', sans-serif;
-      font-size: .74rem; font-weight: 600;
-      letter-spacing: .14em; text-transform: uppercase;
-      border-radius: var(--r); transition: var(--t);
-      cursor: pointer; border: none; white-space: nowrap;
-    }
-    .btn-primary { background: var(--green-a); color: var(--bg-deep); }
-    .btn-primary:hover { background: #34e07d; transform: translateY(-2px); box-shadow: 0 8px 24px var(--green-glow); }
-    .btn-outline { background: transparent; color: var(--text); border: 1px solid rgba(242,237,227,.28); }
-    .btn-outline:hover { border-color: var(--green-a); color: var(--green-a); transform: translateY(-2px); }
-    .btn-gold { background: var(--gold); color: var(--bg-deep); }
-    .btn-gold:hover { background: var(--gold-l); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(196,164,74,.3); }
+/* ═══════════════════════════════════════════════════════
+   TOKENS
+═══════════════════════════════════════════════════════ */
+:root {
+  --black:   #080808;
+  --black-2: #0f0f0f;
+  --black-3: #161616;
+  --green:   #727d71;
+  --green-l: #8a9688;
+  --green-d: #5a6659;
+  --cream:   #e9e8df;
+  --cream-d: #c8c7be;
+  --cream-m: rgba(233,232,223,.45);
+  --border:  rgba(114,125,113,.18);
+  --border-h:rgba(114,125,113,.45);
+  --font-d:  'Syne', sans-serif;
+  --font-e:  'Cormorant Garamond', serif;
+  --font-b:  'DM Sans', sans-serif;
+  --ease:    cubic-bezier(.77,0,.175,1);
+  --ease-s:  cubic-bezier(.4,0,.2,1);
+}
 
-    /* ============================================================
-       NAVIGATION
-    ============================================================ */
-    .nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      padding: 20px 40px;
-      display: flex; align-items: center; justify-content: space-between;
-      transition: var(--t);
-    }
-    .nav.scrolled {
-      background: rgba(5,16,10,.96);
-      backdrop-filter: blur(14px);
-      padding: 13px 40px;
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-logo {
-      display: flex; align-items: center;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem; font-weight: 600; letter-spacing: .06em;
-    }
-    .logo-foto { color: var(--text); padding-right: 9px; border-right: 1.5px solid var(--green-a); }
-    .logo-name { color: var(--green-a); padding: 0 9px; font-size: 1rem; letter-spacing: .22em; }
-    .logo-dj   { color: var(--text); padding-left: 9px; border-left: 1.5px solid var(--green-a); }
-    .nav-links { display: flex; align-items: center; gap: 30px; list-style: none; }
-    .nav-links a {
-      font-size: .72rem; font-weight: 500;
-      letter-spacing: .14em; text-transform: uppercase;
-      color: var(--text-s); transition: color .25s;
-    }
-    .nav-links a:hover { color: var(--text); }
-    .nav-cta {
-      color: var(--green-a) !important;
-      border: 1px solid var(--green-a);
-      padding: 7px 18px; border-radius: var(--r);
-    }
-    .nav-cta:hover { background: var(--green-a); color: var(--bg-deep) !important; }
-    .nav-burger {
-      display: none; flex-direction: column; gap: 5px;
-      cursor: pointer; background: none; border: none; padding: 4px;
-    }
-    .nav-burger span { display: block; width: 24px; height: 1.5px; background: var(--text); transition: var(--t); }
+/* ═══════════════════════════════════════════════════════
+   RESET
+═══════════════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--black);
+  color: var(--cream);
+  font-family: var(--font-b);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+p { margin-bottom: 1em; }
+.container { max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+.container--narrow { max-width: 900px; margin: 0 auto; padding: 0 40px; }
 
-    /* ============================================================
-       MOBILE MENU
-    ============================================================ */
-    .mob-menu {
-      position: fixed; inset: 0;
-      background: rgba(5,16,10,.98);
-      z-index: 200;
-      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 28px;
-      transform: translateX(100%); transition: transform .4s var(--ease);
-    }
-    .mob-menu.open { transform: translateX(0); }
-    .mob-menu a {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem; color: var(--text); letter-spacing: .05em;
-      transition: color .25s;
-    }
-    .mob-menu a:hover { color: var(--green-a); }
-    .mob-close {
-      position: absolute; top: 22px; right: 22px;
-      background: none; border: none;
-      color: var(--text); font-size: 1.5rem; cursor: pointer;
-    }
+/* ═══════════════════════════════════════════════════════
+   TYPE UTILITIES
+═══════════════════════════════════════════════════════ */
+.eyebrow {
+  font-family: var(--font-d);
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  color: var(--green);
+  display: block;
+  margin-bottom: 16px;
+}
+.section-num {
+  font-family: var(--font-d);
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  color: var(--green);
+  margin-bottom: 10px;
+  display: block;
+}
 
-    /* ============================================================
-       HERO — SPLIT VIEW
-    ============================================================ */
-    .hero {
-      position: relative; height: 100vh; min-height: 680px;
-      display: flex; overflow: hidden;
-    }
-    .panel {
-      position: relative; flex: 1;
-      display: flex; flex-direction: column; justify-content: center;
-      overflow: hidden; cursor: pointer;
-      transition: flex .65s var(--ease);
-    }
-    .panel:hover { flex: 1.45; }
-    .panel-bg {
-      position: absolute; inset: 0;
-      background-size: cover; background-position: center;
-      transition: transform .8s var(--ease);
-    }
-    .panel:hover .panel-bg { transform: scale(1.05); }
-    .panel-photo .panel-bg {
-      background: linear-gradient(135deg, #0b2015 0%, #1e5236 45%, #0d2818 100%);
-    }
-    .panel-photo .panel-bg::after {
-      content: '';position: absolute; inset: 0;
-      background:
-        radial-gradient(circle at 28% 38%, rgba(39,201,109,.09) 0%, transparent 52%),
-        radial-gradient(circle at 72% 70%, rgba(196,164,74,.07) 0%, transparent 42%);
-    }
-    .panel-dj .panel-bg {
-      background: linear-gradient(135deg, #061009 0%, #0e2319 45%, #0a1910 100%);
-    }
-    .panel-dj .panel-bg::after {
-      content: ''; position: absolute; inset: 0;
-      background:
-        radial-gradient(circle at 68% 30%, rgba(39,201,109,.11) 0%, transparent 52%),
-        radial-gradient(circle at 32% 72%, rgba(196,164,74,.08) 0%, transparent 42%);
-    }
-    .panel-photo::before {
-      content: ''; position: absolute; inset: 0; z-index: 1;
-      background: linear-gradient(to right, rgba(5,16,10,.25) 0%, transparent 32%),
-                  linear-gradient(to left,  rgba(5,16,10,.65) 0%, transparent 38%);
-    }
-    .panel-dj::before {
-      content: ''; position: absolute; inset: 0; z-index: 1;
-      background: linear-gradient(to right, rgba(5,16,10,.65) 0%, transparent 38%),
-                  linear-gradient(to left,  rgba(5,16,10,.25) 0%, transparent 32%);
-    }
-    .panel-content {
-      position: relative; z-index: 2; padding: 88px 52px;
-      opacity: .55; transition: opacity .4s;
-    }
-    .panel:hover .panel-content { opacity: 1; }
-    .panel-eyebrow {
-      font-size: .62rem; font-weight: 600; letter-spacing: .42em;
-      text-transform: uppercase; color: var(--green-a);
-      margin-bottom: 14px; display: block;
-    }
-    .panel-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.4rem, 5vw, 4.4rem);
-      font-weight: 300; line-height: 1.04; color: var(--text); margin-bottom: 18px;
-    }
-    .panel-title em { font-style: italic; color: var(--green-a); }
-    .panel-desc { font-size: .84rem; color: var(--text-s); max-width: 280px; line-height: 1.7; }
-    .panel-photo .panel-content { text-align: left; }
-    .panel-dj .panel-content  { text-align: right; padding: 88px 52px 88px 90px; }
-    .panel-dj .panel-desc      { margin-left: auto; }
+/* ═══════════════════════════════════════════════════════
+   BUTTONS
+═══════════════════════════════════════════════════════ */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-d);
+  font-size: .72rem; font-weight: 700;
+  letter-spacing: .2em; text-transform: uppercase;
+  padding: 15px 36px;
+  border: none; cursor: pointer;
+  transition: all .3s var(--ease-s);
+  white-space: nowrap;
+}
+.btn-light {
+  background: var(--cream);
+  color: var(--black);
+}
+.btn-light:hover {
+  background: var(--green);
+  color: var(--cream);
+  transform: translateY(-2px);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--cream);
+  border: 1px solid rgba(233,232,223,.3);
+}
+.btn-outline:hover {
+  border-color: var(--green);
+  color: var(--green);
+  transform: translateY(-2px);
+}
+.btn-green {
+  background: var(--green);
+  color: var(--cream);
+}
+.btn-green:hover {
+  background: var(--green-l);
+  transform: translateY(-2px);
+}
+.btn svg {
+  width: 14px; height: 14px;
+  transition: transform .3s var(--ease-s);
+}
+.btn:hover svg { transform: translateX(4px); }
 
-    /* CENTER SPLIT BRAND */
-    .hero-split {
-      position: absolute; left: 50%; top: 0; bottom: 0;
-      transform: translateX(-50%);
-      width: 2px; z-index: 10; pointer-events: none;
-    }
-    .split-line {
-      position: absolute; top: 0; bottom: 0; left: 50%;
-      transform: translateX(-50%);
-      width: 1px;
-      background: linear-gradient(to bottom, transparent 5%, var(--green-a) 50%, transparent 95%);
-      animation: pulseLine 3.2s ease-in-out infinite;
-    }
-    @keyframes pulseLine { 0%,100%{opacity:.35} 50%{opacity:.9} }
-    .split-brand {
-      position: absolute; top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center; pointer-events: none;
-    }
-    .split-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.1rem, 1.9vw, 1.7rem);
-      font-weight: 600; letter-spacing: .42em;
-      color: var(--text); text-transform: uppercase;
-      background: var(--bg-deep); padding: 9px 18px;
-      border: 1px solid var(--border-h); white-space: nowrap;
-    }
-    .split-sub {
-      display: block; font-size: .58rem; letter-spacing: .26em;
-      text-transform: uppercase; color: var(--green-a); margin-top: 7px;
-    }
+/* ═══════════════════════════════════════════════════════
+   NAVIGATION
+═══════════════════════════════════════════════════════ */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding: 28px 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: all .4s var(--ease-s);
+}
+.nav.scrolled {
+  background: rgba(8,8,8,.95);
+  backdrop-filter: blur(20px);
+  padding: 18px 40px;
+  border-bottom: 1px solid var(--border);
+}
+/* Logo mirrors the business-card split */
+.nav-logo {
+  display: flex; align-items: center;
+  font-family: var(--font-d);
+  font-size: 1.1rem; font-weight: 800;
+  letter-spacing: .08em;
+  gap: 0;
+}
+.logo-l { color: var(--cream); padding-right: 10px; border-right: 1px solid var(--green); }
+.logo-c { color: var(--green); padding: 0 10px; font-size: .75rem; font-weight: 700; letter-spacing: .35em; }
+.logo-r { color: var(--cream); padding-left: 10px; border-left: 1px solid var(--green); }
 
-    /* HERO BOTTOM */
-    .hero-foot {
-      position: absolute; bottom: 0; left: 0; right: 0; z-index: 20;
-      background: linear-gradient(to top, rgba(5,16,10,.98) 0%, rgba(5,16,10,.7) 55%, transparent 100%);
-      padding: 52px 40px 60px; text-align: center;
-    }
-    .hero-h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.9rem, 4.2vw, 3.8rem);
-      font-weight: 400; color: var(--text); margin-bottom: 14px; line-height: 1.08;
-    }
-    .hero-h1 em { font-style: italic; color: var(--green-a); }
-    .hero-sub {
-      font-size: clamp(.82rem, 1.4vw, .98rem);
-      color: var(--text-s); margin-bottom: 34px;
-      font-weight: 300; letter-spacing: .03em;
-    }
-    .hero-ctas { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
+.nav-links { display: flex; align-items: center; gap: 36px; list-style: none; }
+.nav-links a {
+  font-family: var(--font-d); font-size: .65rem; font-weight: 600;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--cream-d); transition: color .25s;
+}
+.nav-links a:hover { color: var(--cream); }
+.nav-cta {
+  border: 1px solid var(--green) !important;
+  color: var(--green) !important;
+  padding: 8px 20px;
+  font-size: .65rem !important;
+  transition: all .3s !important;
+}
+.nav-cta:hover { background: var(--green) !important; color: var(--cream) !important; }
 
-    /* ============================================================
-       VALUE STRIP
-    ============================================================ */
-    .vstrip {
-      background: var(--bg-card);
-      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
-      padding: 38px 0;
-    }
-    .vstrip-inner {
-      display: flex; align-items: center; justify-content: center;
-      gap: 44px; flex-wrap: wrap;
-    }
-    .vstrip-item { display: flex; align-items: center; gap: 11px; font-size: .78rem; color: var(--text-s); }
-    .vstrip-icon { color: var(--green-a); font-size: 1.05rem; }
-    .vstrip-sep  { width: 1px; height: 22px; background: var(--border); }
+.nav-burger {
+  display: none; flex-direction: column; gap: 5px;
+  cursor: pointer; background: none; border: none; padding: 4px;
+}
+.nav-burger span { display: block; width: 22px; height: 1px; background: var(--cream); transition: all .3s; }
 
-    /* ============================================================
-       SECTION SHARED
-    ============================================================ */
-    .section { padding: 96px 0; }
-    .sec-header { text-align: center; margin-bottom: 60px; }
-    .sec-header h2 { color: var(--text); margin-bottom: 16px; }
-    .sec-header p  { font-size: .93rem; color: var(--text-s); max-width: 540px; margin: 0 auto; line-height: 1.8; }
+/* ═══════════════════════════════════════════════════════
+   MOBILE MENU
+═══════════════════════════════════════════════════════ */
+.mob {
+  position: fixed; inset: 0; z-index: 200;
+  background: var(--black);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 32px;
+  transform: translateX(100%); transition: transform .5s var(--ease);
+}
+.mob.open { transform: none; }
+.mob a {
+  font-family: var(--font-d); font-size: 2.2rem; font-weight: 800;
+  color: var(--cream); letter-spacing: .05em;
+  transition: color .25s;
+}
+.mob a:hover { color: var(--green); }
+.mob-x {
+  position: absolute; top: 24px; right: 28px;
+  background: none; border: none; color: var(--cream);
+  font-family: var(--font-d); font-size: 1.2rem; font-weight: 700;
+  cursor: pointer; letter-spacing: .1em;
+}
 
-    /* ============================================================
-       PROMISE / ONE STOP SHOP
-    ============================================================ */
-    .promise { background: var(--bg-dark); padding: 96px 0; }
-    .promise-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 76px; align-items: center; }
-    .promise-text h2 { margin-bottom: 22px; color: var(--text); }
-    .promise-text p  { font-size: .93rem; color: var(--text-s); line-height: 1.8; }
-    .promise-text .btn { margin-top: 20px; }
-    .feat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    .feat {
-      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--rl);
-      padding: 22px; transition: var(--t);
-    }
-    .feat:hover { border-color: var(--border-h); background: var(--bg-card-h); }
-    .feat-icon  { font-size: 1.4rem; margin-bottom: 10px; }
-    .feat h4 {
-      font-family: 'Montserrat', sans-serif; font-size: .78rem;
-      font-weight: 600; color: var(--text); margin-bottom: 5px;
-    }
-    .feat p { font-size: .76rem; color: var(--text-m); line-height: 1.6; margin: 0; }
+/* ═══════════════════════════════════════════════════════
+   HERO — SPLIT  (only here, top of page)
+═══════════════════════════════════════════════════════ */
+.hero {
+  position: relative;
+  height: 100vh; min-height: 700px;
+  display: flex;
+  overflow: hidden;
+}
 
-    /* ============================================================
-       SERVICES
-    ============================================================ */
-    .services { background: var(--bg-deep); padding: 96px 0; }
-    .svc-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
-    .svc {
-      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--rl);
-      padding: 38px 30px; position: relative; overflow: hidden; transition: var(--t);
-    }
-    .svc::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-      background: transparent; transition: background .35s;
-    }
-    .svc:hover { border-color: var(--border-h); transform: translateY(-4px); box-shadow: var(--shadow-l); }
-    .svc:hover::before { background: var(--green-a); }
-    .svc-star { border-color: var(--green-a); background: linear-gradient(135deg, var(--bg-card) 0%, rgba(28,107,60,.15) 100%); }
-    .svc-star::before { background: var(--green-a); }
-    .svc-badge {
-      display: inline-block; background: var(--green-a); color: var(--bg-deep);
-      font-size: .58rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
-      padding: 4px 10px; border-radius: 2px; margin-bottom: 18px;
-    }
-    .svc-icon { font-size: 2rem; margin-bottom: 14px; }
-    .svc h3  { color: var(--text); margin-bottom: 8px; font-size: 1.55rem; }
-    .svc-sub { font-size: .76rem; color: var(--green-a); letter-spacing: .05em; margin-bottom: 14px; display: block; }
-    .svc > p { font-size: .84rem; color: var(--text-s); line-height: 1.7; margin-bottom: 22px; }
-    .svc-list { list-style: none; margin-bottom: 28px; }
-    .svc-list li {
-      display: flex; align-items: flex-start; gap: 9px;
-      font-size: .78rem; color: var(--text-s); padding: 5px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .svc-list li:last-child { border-bottom: none; }
-    .svc-list li::before { content: '✓'; color: var(--green-a); font-weight: 700; flex-shrink: 0; margin-top: 1px; }
-    .svc-price-from { font-size: .68rem; color: var(--text-m); text-transform: uppercase; letter-spacing: .1em; display: block; margin-bottom: 3px; }
-    .svc-price-amt  { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--text); }
-    .svc-price-amt sup { font-size: .9rem; color: var(--text-s); }
-    .svc .btn { width: 100%; justify-content: center; margin-top: 18px; }
+/* The two panels */
+.split-panel {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  cursor: default;
+  transition: flex .7s var(--ease);
+}
+.split-panel:hover { flex: 1.35; }
 
-    /* ============================================================
-       CTA BAND
-    ============================================================ */
-    .cta-band {
-      background: linear-gradient(135deg, var(--green) 0%, #0f3a20 100%);
-      border-top: 1px solid rgba(39,201,109,.2); border-bottom: 1px solid rgba(39,201,109,.2);
-      padding: 64px 0; text-align: center;
-    }
-    .cta-band h2 { color: var(--text); margin-bottom: 14px; }
-    .cta-band p  { color: rgba(242,237,227,.7); font-size: .93rem; margin-bottom: 30px; max-width: 490px; margin-left: auto; margin-right: auto; }
-    .cta-band .btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.sp-bg {
+  position: absolute; inset: 0;
+  transition: transform .9s var(--ease);
+}
+.split-panel:hover .sp-bg { transform: scale(1.04); }
 
-    /* ============================================================
-       GALLERY
-    ============================================================ */
-    .gallery { background: var(--bg-dark); padding: 96px 0; }
-    .gal-tabs {
-      display: flex; align-items: center; justify-content: center;
-      gap: 4px; margin-bottom: 44px; flex-wrap: wrap;
-    }
-    .gal-tab {
-      background: transparent; border: 1px solid var(--border); color: var(--text-m);
-      padding: 9px 22px;
-      font-family: 'Montserrat', sans-serif; font-size: .7rem; font-weight: 500;
-      letter-spacing: .1em; text-transform: uppercase; border-radius: 2px;
-      cursor: pointer; transition: var(--t);
-    }
-    .gal-tab:hover, .gal-tab.active { background: var(--green-a); border-color: var(--green-a); color: var(--bg-deep); }
-    .gal-panel  { display: none; }
-    .gal-panel.active { display: block; }
-    .gal-grid {
-      display: grid;
-      grid-template-columns: repeat(12,1fr);
-      grid-template-rows: repeat(2, 210px);
-      gap: 7px;
-    }
-    .gi { border-radius: var(--r); overflow: hidden; position: relative; cursor: pointer; }
-    .gi:nth-child(1) { grid-column: span 5; grid-row: span 2; }
-    .gi:nth-child(2) { grid-column: span 4; }
-    .gi:nth-child(3) { grid-column: span 3; }
-    .gi:nth-child(4) { grid-column: span 3; }
-    .gi:nth-child(5) { grid-column: span 4; }
-    .gi-bg {
-      position: absolute; inset: 0;
-      background-size: cover; background-position: center;
-      transition: transform .5s ease;
-    }
-    .gi:hover .gi-bg { transform: scale(1.06); }
-    .gi-ov {
-      position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(5,16,10,.72) 0%, transparent 55%);
-      opacity: 0; transition: opacity .35s;
-      display: flex; align-items: flex-end; padding: 14px;
-    }
-    .gi:hover .gi-ov { opacity: 1; }
-    .gi-lbl { font-size: .68rem; color: rgba(255,255,255,.82); letter-spacing: .1em; text-transform: uppercase; }
+/* Photography panel — warm dark */
+.sp-photo .sp-bg {
+  background:
+    radial-gradient(ellipse at 25% 35%, rgba(255,210,130,.055) 0%, transparent 55%),
+    radial-gradient(ellipse at 75% 65%, rgba(255,170,80,.03) 0%, transparent 45%),
+    linear-gradient(160deg, #161210 0%, #0b0909 45%, #131110 100%);
+}
+/* Subtle grain overlay */
+.sp-photo .sp-bg::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  opacity: .4;
+}
 
-    /* Gradient placeholders per category */
-    .gw1{background:linear-gradient(135deg,#1a4731,#2d6a4f,#0f2d1e)}
-    .gw2{background:linear-gradient(135deg,#0f2d1e,#1a3a28,#2d5a3d)}
-    .gw3{background:linear-gradient(135deg,#1c3a25,#2a5c3a)}
-    .gw4{background:linear-gradient(135deg,#0d2016,#1a3a28)}
-    .gw5{background:linear-gradient(135deg,#183323,#25523a)}
-    .gq1{background:linear-gradient(135deg,#2a1a3a,#4a2d6a,#1a0d2d)}
-    .gq2{background:linear-gradient(135deg,#1a0d2d,#2d1a4a,#4a2d6a)}
-    .gq3{background:linear-gradient(135deg,#251a35,#3d2a5c)}
-    .gq4{background:linear-gradient(135deg,#1a0f28,#2a1a3a)}
-    .gq5{background:linear-gradient(135deg,#1f1530,#3a2552)}
-    .gc1{background:linear-gradient(135deg,#1a1a2e,#2d2d4a,#0f0f2d)}
-    .gc2{background:linear-gradient(135deg,#0f0f2d,#1a1a3a,#2d2d4a)}
-    .gc3{background:linear-gradient(135deg,#151525,#25253d)}
-    .gc4{background:linear-gradient(135deg,#0f0f28,#1a1a35)}
-    .gc5{background:linear-gradient(135deg,#181830,#28284a)}
-    .gp1{background:linear-gradient(135deg,#2d1a0f,#4a2d1a,#1a0f0d)}
-    .gp2{background:linear-gradient(135deg,#1a0f0d,#2d1a10,#4a2d1a)}
-    .gp3{background:linear-gradient(135deg,#231512,#3d2518)}
-    .gp4{background:linear-gradient(135deg,#180e0b,#2a1812)}
-    .gp5{background:linear-gradient(135deg,#1c1210,#2e1e18)}
+/* DJ panel — cooler dark with subtle green tint */
+.sp-dj .sp-bg {
+  background:
+    radial-gradient(ellipse at 70% 25%, rgba(114,125,113,.07) 0%, transparent 55%),
+    radial-gradient(ellipse at 30% 75%, rgba(114,125,113,.04) 0%, transparent 50%),
+    linear-gradient(200deg, #0c0d0c 0%, #080808 45%, #0a0b0a 100%);
+}
+.sp-dj .sp-bg::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  opacity: .4;
+}
 
-    .gal-desc { text-align: center; margin-top: 28px; padding-top: 28px; border-top: 1px solid var(--border); }
-    .gal-desc p { font-size: .84rem; color: var(--text-s); max-width: 460px; margin: 0 auto 16px; }
+/* Panel inner content */
+.sp-content {
+  position: relative; z-index: 2;
+  height: 100%;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 0 52px 120px;
+  opacity: .55;
+  transition: opacity .4s;
+}
+.split-panel:hover .sp-content { opacity: 1; }
 
-    /* ============================================================
-       TESTIMONIALS
-    ============================================================ */
-    .testi { background: var(--bg-deep); padding: 96px 0; }
-    .testi-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
-    .tcard {
-      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--rl);
-      padding: 34px 26px; transition: var(--t);
-    }
-    .tcard:hover { border-color: var(--border-h); transform: translateY(-3px); }
-    .tquote { font-size: 2.4rem; line-height: 1; color: var(--green-a); font-family: 'Cormorant Garamond', serif; margin-bottom: 14px; opacity: .55; }
-    .tstars  { color: var(--gold); font-size: .78rem; letter-spacing: 2px; margin-bottom: 14px; }
-    .ttext   { font-size: .86rem; color: var(--text-s); line-height: 1.8; font-style: italic; margin-bottom: 22px; }
-    .tauthor { display: flex; align-items: center; gap: 11px; padding-top: 14px; border-top: 1px solid var(--border); }
-    .tavatar {
-      width: 38px; height: 38px; border-radius: 50%; background: var(--green);
-      display: flex; align-items: center; justify-content: center;
-      font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: var(--text); flex-shrink: 0;
-    }
-    .tauthor strong { display: block; font-size: .8rem; font-weight: 600; color: var(--text); }
-    .tauthor span   { font-size: .7rem; color: var(--text-m); letter-spacing: .04em; }
+.sp-dj .sp-content { text-align: right; align-items: flex-end; }
 
-    /* ============================================================
-       TRUST BAR
-    ============================================================ */
-    .trust { background: var(--bg-card); border-bottom: 1px solid var(--border); padding: 30px 0; }
-    .trust-inner { display: flex; align-items: center; justify-content: center; gap: 38px; flex-wrap: wrap; }
-    .trust-item { display: flex; align-items: center; gap: 9px; font-size: .76rem; color: var(--text-s); }
-    .trust-icon { color: var(--green-a); font-size: .95rem; }
+.sp-label {
+  font-family: var(--font-d);
+  font-size: .6rem; font-weight: 700;
+  letter-spacing: .45em; text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 12px;
+}
+.sp-title {
+  font-family: var(--font-d);
+  font-size: clamp(3rem, 6vw, 6rem);
+  font-weight: 800;
+  line-height: .95;
+  color: var(--cream);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: -.01em;
+}
+.sp-sub {
+  font-family: var(--font-e);
+  font-size: clamp(.9rem, 1.4vw, 1.1rem);
+  font-style: italic;
+  color: var(--cream-d);
+  max-width: 280px;
+  line-height: 1.6;
+}
+.sp-dj .sp-sub { text-align: right; }
 
-    /* ============================================================
-       PRICING
-    ============================================================ */
-    .pricing { background: var(--bg-dark); padding: 96px 0; }
-    .price-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; align-items: start; }
-    .pcard {
-      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--rl);
-      padding: 38px 30px; position: relative; transition: var(--t);
-    }
-    .pcard:hover { border-color: var(--border-h); transform: translateY(-4px); }
-    .pcard-star {
-      border-color: var(--green-a);
-      background: linear-gradient(135deg, var(--bg-card) 0%, rgba(28,107,60,.13) 100%);
-      transform: scale(1.03);
-    }
-    .pcard-star:hover { transform: scale(1.03) translateY(-4px); }
-    .pbadge {
-      position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
-      background: var(--green-a); color: var(--bg-deep);
-      font-size: .58rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
-      padding: 4px 16px; border-radius: 20px; white-space: nowrap;
-    }
-    .picon { font-size: 1.9rem; margin-bottom: 14px; }
-    .pcard h3 { color: var(--text); margin-bottom: 5px; }
-    .psub { font-size: .73rem; color: var(--green-a); letter-spacing: .04em; margin-bottom: 22px; display: block; }
-    .pamt { margin-bottom: 26px; padding-bottom: 22px; border-bottom: 1px solid var(--border); }
-    .pfrom { font-size: .66rem; color: var(--text-m); text-transform: uppercase; letter-spacing: .1em; display: block; margin-bottom: 4px; }
-    .pprice { font-family: 'Cormorant Garamond', serif; font-size: 2.7rem; font-weight: 300; color: var(--text); line-height: 1; }
-    .pprice sup { font-size: 1.1rem; color: var(--text-s); }
-    .pnote  { font-size: .7rem; color: var(--text-m); margin-top: 4px; }
-    .plist  { list-style: none; margin-bottom: 28px; }
-    .plist li {
-      display: flex; align-items: flex-start; gap: 9px;
-      font-size: .78rem; color: var(--text-s); padding: 6px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .plist li:last-child { border-bottom: none; }
-    .plist li::before { content: '✓'; color: var(--green-a); font-weight: 700; flex-shrink: 0; }
-    .plist .no { color: var(--text-m); }
-    .plist .no::before { content: '–'; color: var(--text-m); }
-    .pcard .btn { width: 100%; justify-content: center; }
+/* Left fade edge per panel */
+.sp-photo::before {
+  content: ''; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(to right, rgba(8,8,8,.15) 0%, transparent 35%),
+              linear-gradient(to left,  rgba(8,8,8,.7)  0%, transparent 40%);
+}
+.sp-dj::before {
+  content: ''; position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(to right, rgba(8,8,8,.7)  0%, transparent 40%),
+              linear-gradient(to left,  rgba(8,8,8,.15) 0%, transparent 35%);
+}
 
-    /* ============================================================
-       CONTACT
-    ============================================================ */
-    .contact { background: var(--bg-deep); padding: 96px 0; }
-    .contact-inner { display: grid; grid-template-columns: 1fr 1.4fr; gap: 76px; align-items: start; }
-    .cinfo h2  { color: var(--text); margin-bottom: 18px; }
-    .cinfo > p { font-size: .9rem; color: var(--text-s); line-height: 1.8; margin-bottom: 14px; }
-    .cinfo em  { font-style: italic; font-size: .84rem; color: var(--text-m); }
-    .cdetails  { display: flex; flex-direction: column; gap: 14px; margin: 24px 0; }
-    .cdet {
-      display: flex; align-items: center; gap: 11px;
-      font-size: .83rem; color: var(--text-s);
-    }
-    .cdet-ic {
-      width: 34px; height: 34px; border: 1px solid var(--border); border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      color: var(--green-a); font-size: .88rem; flex-shrink: 0;
-    }
-    .csoc { display: flex; gap: 10px; }
-    .soclink {
-      width: 38px; height: 38px; border: 1px solid var(--border); border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      color: var(--text-s); font-size: .82rem; transition: var(--t);
-    }
-    .soclink:hover { border-color: var(--green-a); color: var(--green-a); }
-    .cform {
-      background: var(--bg-card); border: 1px solid var(--border);
-      border-radius: var(--rl); padding: 38px;
-    }
-    .cform h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; color: var(--text); margin-bottom: 26px; }
-    .frow { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-    .fg  { margin-bottom: 14px; }
-    .fg label {
-      display: block; font-size: .68rem; font-weight: 600;
-      letter-spacing: .1em; text-transform: uppercase; color: var(--text-m); margin-bottom: 5px;
-    }
-    .fg input, .fg select, .fg textarea {
-      width: 100%; background: var(--bg-deep); border: 1px solid var(--border);
-      border-radius: var(--r); padding: 11px 15px;
-      font-family: 'Montserrat', sans-serif; font-size: .83rem; color: var(--text);
-      transition: border-color .25s; -webkit-appearance: none;
-    }
-    .fg input:focus, .fg select:focus, .fg textarea:focus { outline: none; border-color: var(--green-a); }
-    .fg select option { background: var(--bg-card); }
-    .fg textarea { resize: vertical; min-height: 96px; }
-    .fsend { width: 100%; justify-content: center; padding: 15px; font-size: .78rem; margin-top: 6px; }
-    .fnote { text-align: center; font-size: .7rem; color: var(--text-m); margin-top: 10px; }
-    .fsuccess {
-      display: none; background: rgba(39,201,109,.1); border: 1px solid var(--green-a);
-      border-radius: var(--rl); padding: 22px; text-align: center; color: var(--green-a); font-size: .88rem;
-    }
+/* ─── THE CENTER DIVIDER ─── */
+.hero-divider {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 50%; transform: translateX(-50%);
+  width: 1px; z-index: 20;
+  pointer-events: none;
+}
+.divider-line {
+  position: absolute; inset: 0;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--green) 20%,
+    var(--green) 80%,
+    transparent 100%
+  );
+  left: 50%; transform: translateX(-50%);
+}
+/* Brand card on divider — the business-card split */
+.divider-brand {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  white-space: nowrap;
+}
+.db-inner {
+  background: var(--black);
+  border: 1px solid var(--green);
+  padding: 14px 22px 12px;
+}
+.db-name {
+  font-family: var(--font-d);
+  font-size: clamp(.95rem, 1.6vw, 1.4rem);
+  font-weight: 800;
+  letter-spacing: .55em;
+  color: var(--cream);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 4px;
+}
+.db-sub {
+  font-family: var(--font-d);
+  font-size: .5rem; font-weight: 700;
+  letter-spacing: .3em; text-transform: uppercase;
+  color: var(--green);
+  display: block;
+}
 
-    /* ============================================================
-       FOOTER
-    ============================================================ */
-    .footer { background: var(--bg-dark); border-top: 1px solid var(--border); padding: 60px 0 28px; }
-    .footer-top {
-      display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 36px; margin-bottom: 44px;
-    }
-    .fbrand h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; color: var(--text); margin-bottom: 10px; }
-    .fbrand p  { font-size: .8rem; color: var(--text-m); line-height: 1.7; margin-bottom: 16px; }
-    .fcol h4 {
-      font-family: 'Montserrat', sans-serif; font-size: .66rem; font-weight: 700;
-      letter-spacing: .2em; text-transform: uppercase; color: var(--text-m); margin-bottom: 14px;
-    }
-    .fcol ul  { list-style: none; }
-    .fcol li  { margin-bottom: 7px; }
-    .fcol a   { font-size: .8rem; color: var(--text-m); transition: color .25s; }
-    .fcol a:hover { color: var(--green-a); }
-    .footer-bot {
-      padding-top: 22px; border-top: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: space-between;
-      flex-wrap: wrap; gap: 10px;
-    }
-    .footer-bot p { font-size: .7rem; color: var(--text-m); margin: 0; }
-    .footer-bot a { color: var(--green-a); }
+/* ─── HERO BOTTOM CTA ─── */
+.hero-cta-area {
+  position: absolute;
+  bottom: 0; left: 0; right: 0; z-index: 25;
+  background: linear-gradient(to top, rgba(8,8,8,1) 0%, rgba(8,8,8,.85) 45%, transparent 100%);
+  padding: 64px 40px 56px;
+  text-align: center;
+}
+.hero-headline {
+  font-family: var(--font-d);
+  font-size: clamp(1.7rem, 3.6vw, 3.2rem);
+  font-weight: 800;
+  color: var(--cream);
+  line-height: 1.08;
+  letter-spacing: -.01em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.hero-headline span { color: var(--green); }
+.hero-tagline {
+  font-family: var(--font-e);
+  font-size: clamp(.95rem, 1.5vw, 1.2rem);
+  font-style: italic;
+  color: var(--cream-d);
+  margin-bottom: 32px;
+  font-weight: 300;
+}
+.hero-btns { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
 
-    /* ============================================================
-       ANIMATIONS
-    ============================================================ */
-    .fi { opacity: 0; transform: translateY(22px); transition: opacity .62s ease, transform .62s ease; }
-    .fi.vis { opacity: 1; transform: translateY(0); }
+/* ═══════════════════════════════════════════════════════
+   TICKER STRIP
+═══════════════════════════════════════════════════════ */
+.ticker {
+  background: var(--green);
+  padding: 13px 0;
+  overflow: hidden;
+  border-top: 1px solid var(--green-d);
+  border-bottom: 1px solid var(--green-d);
+}
+.ticker-track {
+  display: flex; gap: 0;
+  animation: ticker 22s linear infinite;
+  width: max-content;
+}
+.ticker-track span {
+  font-family: var(--font-d);
+  font-size: .65rem; font-weight: 700;
+  letter-spacing: .25em; text-transform: uppercase;
+  color: var(--cream);
+  padding: 0 28px;
+  white-space: nowrap;
+}
+.ticker-track span.sep { color: rgba(233,232,223,.4); padding: 0 4px; }
+@keyframes ticker { from { transform: translateX(0) } to { transform: translateX(-50%) } }
 
-    /* ============================================================
-       RESPONSIVE
-    ============================================================ */
-    @media (max-width: 1024px) {
-      .promise-inner { grid-template-columns: 1fr; gap: 44px; }
-      .contact-inner { grid-template-columns: 1fr; }
-      .footer-top    { grid-template-columns: 1fr 1fr; }
-    }
-    @media (max-width: 768px) {
-      .nav { padding: 15px 18px; }
-      .nav.scrolled { padding: 11px 18px; }
-      .nav-links { display: none; }
-      .nav-burger { display: flex; }
-      .hero { flex-direction: column; height: auto; min-height: 100vh; }
-      .panel { flex: none; height: 46vh; min-height: 260px; }
-      .panel:hover { flex: none; }
-      .panel-content { padding: 36px 22px; }
-      .panel-dj .panel-content { text-align: left; padding: 36px 22px; }
-      .panel-dj .panel-desc { margin-left: 0; }
-      .hero-split { top: 46vh; left: 0; right: 0; bottom: auto; width: 100%; height: 2px; transform: translateY(-50%); }
-      .split-line { width: 100%; height: 1px; top: 50%; left: 0; right: 0; bottom: auto; transform: none; }
-      .split-brand { top: 46vh; }
-      .hero-foot { padding: 30px 18px 46px; }
-      .svc-grid  { grid-template-columns: 1fr; }
-      .price-grid{ grid-template-columns: 1fr; }
-      .pcard-star{ transform: scale(1); }
-      .testi-grid{ grid-template-columns: 1fr; }
-      .gal-grid  { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-      .gi { grid-column: span 1 !important; grid-row: span 1 !important; height: 170px; }
-      .frow      { grid-template-columns: 1fr; }
-      .footer-top{ grid-template-columns: 1fr; }
-      .footer-bot{ flex-direction: column; text-align: center; }
-      .trust-inner { gap: 18px; }
-      .vstrip-inner{ gap: 18px; }
-      .vstrip-sep  { display: none; }
-    }
+/* ═══════════════════════════════════════════════════════
+   INTRO STATEMENT
+═══════════════════════════════════════════════════════ */
+.intro {
+  padding: 120px 0;
+  background: var(--black);
+}
+.intro-inner {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 80px;
+  align-items: end;
+}
+.intro-left {}
+.intro-left .eyebrow { margin-bottom: 24px; }
+.intro-left p {
+  font-family: var(--font-e);
+  font-size: 1.1rem; font-style: italic;
+  color: var(--cream-d); line-height: 1.8;
+}
+.intro-right h2 {
+  font-family: var(--font-d);
+  font-size: clamp(2.4rem, 4.5vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.0;
+  letter-spacing: -.02em;
+  text-transform: uppercase;
+  color: var(--cream);
+}
+.intro-right h2 em { color: var(--green); font-style: normal; }
+.intro-right .intro-cta { margin-top: 36px; }
+
+/* ═══════════════════════════════════════════════════════
+   SERVICES — EDITORIAL BANDS
+═══════════════════════════════════════════════════════ */
+.services {
+  padding: 0 0 120px;
+  background: var(--black);
+}
+.svc-divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+.svc-row {
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+  padding: 72px 0;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.svc-num {
+  font-family: var(--font-d);
+  font-size: 4rem; font-weight: 800;
+  color: var(--border);
+  line-height: 1;
+  padding-top: 6px;
+  letter-spacing: -.05em;
+}
+.svc-head h3 {
+  font-family: var(--font-d);
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -.01em;
+  color: var(--cream);
+  line-height: 1.05;
+  margin-bottom: 16px;
+}
+.svc-head .eyebrow { margin-bottom: 14px; }
+.svc-head p {
+  font-family: var(--font-e);
+  font-size: 1.05rem; font-style: italic;
+  color: var(--cream-d); line-height: 1.75;
+  margin-bottom: 28px;
+  font-weight: 300;
+}
+.svc-price-line {
+  font-family: var(--font-d);
+  font-size: 1.1rem; font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 28px;
+  letter-spacing: .02em;
+}
+.svc-price-line span { color: var(--green); font-size: 1.5rem; }
+.svc-body {}
+.svc-list { list-style: none; margin-bottom: 32px; }
+.svc-list li {
+  display: flex; align-items: baseline; gap: 12px;
+  font-size: .84rem; color: var(--cream-d);
+  padding: 9px 0; border-bottom: 1px solid var(--border);
+  font-weight: 300;
+}
+.svc-list li:last-child { border: none; }
+.svc-list li::before {
+  content: '—';
+  color: var(--green); flex-shrink: 0;
+  font-size: .8rem;
+}
+
+/* FEATURED SERVICE row — full-width special */
+.svc-row-featured {
+  grid-template-columns: 1fr;
+  background: var(--black-3);
+  border: 1px solid var(--border-h);
+  padding: 60px;
+  margin: 0 -40px;
+  display: block;
+  border-bottom: none;
+}
+.svc-featured-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.svc-featured-label {
+  font-family: var(--font-d);
+  font-size: .6rem; font-weight: 700;
+  letter-spacing: .4em; text-transform: uppercase;
+  color: var(--green); margin-bottom: 12px;
+  border: 1px solid var(--border); display: inline-block;
+  padding: 5px 12px;
+}
+.svc-featured-inner h3 {
+  font-family: var(--font-d);
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-weight: 800; text-transform: uppercase;
+  letter-spacing: -.01em; color: var(--cream);
+  line-height: 1.0; margin-bottom: 12px;
+}
+.svc-featured-inner > div:nth-child(2) { border-left: 1px solid var(--border); border-right: 1px solid var(--border); padding: 0 48px; }
+
+/* ═══════════════════════════════════════════════════════
+   CTA BAND — FULL WIDTH STATEMENT
+═══════════════════════════════════════════════════════ */
+.cta-full {
+  background: var(--cream);
+  padding: 96px 0;
+  text-align: center;
+}
+.cta-full h2 {
+  font-family: var(--font-d);
+  font-size: clamp(2rem, 5vw, 5rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -.02em;
+  color: var(--black);
+  line-height: 1.0;
+  margin-bottom: 20px;
+}
+.cta-full h2 em { color: var(--green-d); font-style: normal; }
+.cta-full p {
+  font-family: var(--font-e);
+  font-size: 1.2rem; font-style: italic;
+  color: rgba(8,8,8,.6);
+  margin-bottom: 36px;
+  font-weight: 300;
+}
+.cta-btns { display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; }
+.btn-dark { background: var(--black); color: var(--cream); }
+.btn-dark:hover { background: var(--black-3); transform: translateY(-2px); }
+.btn-ghost { background: transparent; color: var(--black); border: 1px solid rgba(8,8,8,.3); }
+.btn-ghost:hover { border-color: var(--black); }
+
+/* ═══════════════════════════════════════════════════════
+   GALLERY
+═══════════════════════════════════════════════════════ */
+.gallery { background: var(--black-2); padding: 100px 0; }
+.gallery .sec-hd { margin-bottom: 52px; }
+
+.g-tabs {
+  display: flex; align-items: center; gap: 2px;
+  margin-bottom: 36px; flex-wrap: wrap;
+}
+.g-tab {
+  font-family: var(--font-d); font-size: .62rem; font-weight: 700;
+  letter-spacing: .2em; text-transform: uppercase;
+  background: transparent; border: none;
+  color: var(--cream-d); padding: 10px 24px;
+  cursor: pointer; transition: all .25s;
+  border-bottom: 2px solid transparent;
+}
+.g-tab:hover { color: var(--cream); }
+.g-tab.on { color: var(--cream); border-bottom-color: var(--green); }
+
+.g-panel { display: none; }
+.g-panel.on { display: block; }
+
+/* 5-image editorial grid */
+.g-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 260px 220px;
+  gap: 6px;
+}
+.g-item { position: relative; overflow: hidden; cursor: pointer; }
+.g-item:nth-child(1) { grid-column: span 5; grid-row: span 2; }
+.g-item:nth-child(2) { grid-column: span 4; }
+.g-item:nth-child(3) { grid-column: span 3; }
+.g-item:nth-child(4) { grid-column: span 3; }
+.g-item:nth-child(5) { grid-column: span 4; }
+
+.g-bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  transition: transform .6s var(--ease-s);
+}
+.g-item:hover .g-bg { transform: scale(1.05); }
+
+.g-ov {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(8,8,8,.75) 0%, transparent 55%);
+  display: flex; align-items: flex-end;
+  padding: 18px 20px;
+  opacity: 0; transition: opacity .3s;
+}
+.g-item:hover .g-ov { opacity: 1; }
+.g-lbl {
+  font-family: var(--font-d); font-size: .6rem; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase; color: var(--cream);
+}
+
+/* Placeholder gradients */
+.bg-w1 { background: linear-gradient(145deg,#1a1712,#0f0d0b,#1c1916); }
+.bg-w2 { background: linear-gradient(145deg,#171512,#0d0b09,#181614); }
+.bg-w3 { background: linear-gradient(145deg,#141210,#0c0a08,#161412); }
+.bg-w4 { background: linear-gradient(145deg,#1b1714,#100d0b,#1e1b18); }
+.bg-w5 { background: linear-gradient(145deg,#161310,#0e0b09,#1a1714); }
+.bg-q1 { background: linear-gradient(145deg,#1a1620,#100c17,#1d1824); }
+.bg-q2 { background: linear-gradient(145deg,#17131e,#0e0a14,#1b1721); }
+.bg-q3 { background: linear-gradient(145deg,#141220,#0b0a15,#181520); }
+.bg-q4 { background: linear-gradient(145deg,#1b1420,#11091a,#201a27); }
+.bg-q5 { background: linear-gradient(145deg,#1a1620,#12101c,#1f1a24); }
+.bg-c1 { background: linear-gradient(145deg,#12141a,#0a0c12,#14161e); }
+.bg-c2 { background: linear-gradient(145deg,#101218,#090b10,#131620); }
+.bg-c3 { background: linear-gradient(145deg,#111318,#090b12,#14161c); }
+.bg-c4 { background: linear-gradient(145deg,#13151c,#0b0d14,#16181e); }
+.bg-c5 { background: linear-gradient(145deg,#0f1116,#080a10,#12141a); }
+.bg-p1 { background: linear-gradient(145deg,#1a1612,#100c08,#1e1a14); }
+.bg-p2 { background: linear-gradient(145deg,#1c1814,#12100c,#201c16); }
+.bg-p3 { background: linear-gradient(145deg,#181512,#100d0a,#1b1814); }
+.bg-p4 { background: linear-gradient(145deg,#1e1a14,#14100a,#221e18); }
+.bg-p5 { background: linear-gradient(145deg,#1a1712,#12100c,#1e1b16); }
+
+/* Faint overlay texture on all gallery cells */
+.g-bg::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 40% 40%, rgba(114,125,113,.06) 0%, transparent 65%);
+}
+
+.g-note {
+  margin-top: 24px;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px;
+}
+.g-note p {
+  font-family: var(--font-e); font-style: italic;
+  font-size: .95rem; color: var(--cream-d); margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════
+   TESTIMONIALS
+═══════════════════════════════════════════════════════ */
+.testi { background: var(--black); padding: 120px 0; }
+
+.t-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+.t-item {
+  background: var(--black); padding: 52px 40px;
+  transition: background .3s;
+}
+.t-item:hover { background: var(--black-2); }
+.t-mark {
+  font-family: var(--font-e); font-size: 3rem;
+  color: var(--green); line-height: 1; margin-bottom: 20px;
+  opacity: .5;
+}
+.t-stars { color: var(--green); font-size: .75rem; letter-spacing: 3px; margin-bottom: 20px; }
+.t-text {
+  font-family: var(--font-e); font-size: 1.05rem; font-style: italic;
+  color: var(--cream-d); line-height: 1.8; margin-bottom: 32px;
+  font-weight: 300;
+}
+.t-by {
+  padding-top: 20px; border-top: 1px solid var(--border);
+  display: flex; align-items: center; gap: 14px;
+}
+.t-av {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--black-3); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-d); font-size: .8rem; font-weight: 700;
+  color: var(--green); flex-shrink: 0;
+}
+.t-by strong { display: block; font-family: var(--font-d); font-size: .75rem; font-weight: 700; color: var(--cream); letter-spacing: .04em; }
+.t-by span { font-size: .7rem; color: var(--cream-d); font-weight: 300; letter-spacing: .03em; }
+
+/* ═══════════════════════════════════════════════════════
+   TRUST ROW
+═══════════════════════════════════════════════════════ */
+.trust {
+  background: var(--black-2);
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  padding: 28px 0;
+}
+.trust-row {
+  display: flex; align-items: center; justify-content: center;
+  gap: 40px; flex-wrap: wrap;
+}
+.trust-item {
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--font-d); font-size: .62rem; font-weight: 600;
+  letter-spacing: .15em; text-transform: uppercase; color: var(--cream-d);
+}
+.trust-item span:first-child { color: var(--green); font-size: .85rem; }
+.trust-sep { width: 1px; height: 18px; background: var(--border); }
+
+/* ═══════════════════════════════════════════════════════
+   PRICING — MINIMAL CLEAN
+═══════════════════════════════════════════════════════ */
+.pricing { background: var(--black); padding: 120px 0; }
+
+.p-grid {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 1px; background: var(--border);
+  border: 1px solid var(--border);
+  margin-top: 60px;
+}
+.p-card {
+  background: var(--black); padding: 52px 40px;
+  position: relative;
+  transition: background .3s;
+  display: flex; flex-direction: column;
+}
+.p-card:hover { background: var(--black-2); }
+.p-card-feat { background: var(--black-3); }
+.p-card-feat:hover { background: #1a1a1a; }
+
+.p-tag {
+  font-family: var(--font-d); font-size: .58rem; font-weight: 700;
+  letter-spacing: .3em; text-transform: uppercase;
+  background: var(--green); color: var(--cream);
+  padding: 5px 12px; display: inline-block;
+  margin-bottom: 32px; align-self: flex-start;
+}
+.p-card h3 {
+  font-family: var(--font-d);
+  font-size: 1.6rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: -.01em;
+  color: var(--cream); margin-bottom: 6px;
+}
+.p-sub {
+  font-family: var(--font-e); font-size: .9rem; font-style: italic;
+  color: var(--cream-d); margin-bottom: 32px; display: block;
+}
+.p-amount { margin-bottom: 32px; padding-bottom: 28px; border-bottom: 1px solid var(--border); }
+.p-from {
+  font-family: var(--font-d); font-size: .58rem; font-weight: 700;
+  letter-spacing: .2em; text-transform: uppercase;
+  color: var(--green); display: block; margin-bottom: 6px;
+}
+.p-price {
+  font-family: var(--font-d); font-size: 3rem; font-weight: 800;
+  color: var(--cream); line-height: 1; letter-spacing: -.03em;
+}
+.p-price sup { font-size: 1.3rem; color: var(--cream-d); vertical-align: super; }
+.p-note { font-size: .72rem; color: var(--cream-d); margin-top: 6px; font-weight: 300; }
+.p-list { list-style: none; margin-bottom: 36px; flex: 1; }
+.p-list li {
+  display: flex; align-items: baseline; gap: 10px;
+  font-size: .82rem; color: var(--cream-d);
+  padding: 8px 0; border-bottom: 1px solid var(--border);
+  font-weight: 300;
+}
+.p-list li:last-child { border: none; }
+.p-list li::before { content: '—'; color: var(--green); flex-shrink: 0; }
+.p-list .no { color: rgba(233,232,223,.25); }
+.p-list .no::before { color: rgba(114,125,113,.3); }
+.p-card .btn { align-self: flex-start; }
+
+/* ═══════════════════════════════════════════════════════
+   CONTACT
+═══════════════════════════════════════════════════════ */
+.contact { background: var(--black-2); padding: 120px 0; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 100px; align-items: start; }
+
+.c-info .eyebrow { margin-bottom: 20px; }
+.c-info h2 {
+  font-family: var(--font-d);
+  font-size: clamp(2.2rem, 3.5vw, 3.5rem);
+  font-weight: 800; text-transform: uppercase;
+  letter-spacing: -.01em; color: var(--cream);
+  line-height: 1.05; margin-bottom: 24px;
+}
+.c-info > p {
+  font-family: var(--font-e); font-style: italic;
+  font-size: 1.05rem; color: var(--cream-d); line-height: 1.8; margin-bottom: 8px;
+}
+.c-details { margin: 32px 0; display: flex; flex-direction: column; gap: 16px; }
+.c-row {
+  display: flex; align-items: center; gap: 14px;
+  font-size: .84rem; color: var(--cream-d); font-weight: 300;
+}
+.c-ic {
+  width: 36px; height: 36px; border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; font-size: .85rem;
+  transition: border-color .25s;
+}
+.c-row:hover .c-ic { border-color: var(--green); }
+.c-soc { display: flex; gap: 8px; }
+.soc-btn {
+  width: 40px; height: 40px; border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: .8rem; color: var(--cream-d);
+  transition: all .25s; cursor: pointer;
+}
+.soc-btn:hover { border-color: var(--green); color: var(--green); }
+
+/* Form */
+.c-form { background: var(--black); border: 1px solid var(--border); padding: 48px 44px; }
+.c-form h3 {
+  font-family: var(--font-d); font-size: 1.4rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: .02em;
+  color: var(--cream); margin-bottom: 32px;
+}
+.f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.fg { margin-bottom: 14px; }
+.fg label {
+  display: block; font-family: var(--font-d); font-size: .58rem; font-weight: 700;
+  letter-spacing: .2em; text-transform: uppercase; color: var(--green); margin-bottom: 7px;
+}
+.fg input, .fg select, .fg textarea {
+  width: 100%; background: var(--black-2); border: 1px solid var(--border);
+  padding: 12px 16px; color: var(--cream);
+  font-family: var(--font-b); font-size: .84rem; font-weight: 300;
+  transition: border-color .25s; -webkit-appearance: none;
+}
+.fg input:focus, .fg select:focus, .fg textarea:focus { outline: none; border-color: var(--green); }
+.fg select option { background: var(--black-2); }
+.fg textarea { resize: vertical; min-height: 100px; }
+.f-send { width: 100%; justify-content: center; margin-top: 8px; }
+.f-note { font-size: .68rem; color: var(--cream-d); text-align: center; margin-top: 12px; font-weight: 300; }
+.f-ok {
+  display: none; border: 1px solid var(--green); padding: 20px; text-align: center;
+  color: var(--green); font-family: var(--font-d); font-size: .8rem;
+  letter-spacing: .1em; text-transform: uppercase;
+}
+
+/* ═══════════════════════════════════════════════════════
+   BOTTOM CTA BAND
+═══════════════════════════════════════════════════════ */
+.cta-bottom {
+  background: var(--green); padding: 80px 0; text-align: center;
+}
+.cta-bottom h2 {
+  font-family: var(--font-d);
+  font-size: clamp(1.8rem, 4vw, 4rem);
+  font-weight: 800; text-transform: uppercase;
+  letter-spacing: -.01em; color: var(--cream);
+  line-height: 1.0; margin-bottom: 16px;
+}
+.cta-bottom p {
+  font-family: var(--font-e); font-size: 1.1rem; font-style: italic;
+  color: rgba(233,232,223,.75); margin-bottom: 32px;
+}
+.cta-bottom .btn-light { background: var(--cream); color: var(--black); }
+.cta-bottom .btn-light:hover { background: var(--black); color: var(--cream); }
+.cta-bottom .btn-outline { color: var(--cream); border-color: rgba(233,232,223,.4); }
+.cta-bottom .btn-outline:hover { border-color: var(--cream); color: var(--cream); }
+
+/* ═══════════════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════════════ */
+.footer { background: var(--black); border-top: 1px solid var(--border); padding: 72px 0 32px; }
+.footer-top {
+  display: grid; grid-template-columns: 1.8fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 60px;
+}
+.f-brand {}
+.f-brand-logo {
+  font-family: var(--font-d); font-size: 1.6rem; font-weight: 800;
+  letter-spacing: .05em; margin-bottom: 16px;
+  display: flex; align-items: center; gap: 0;
+}
+.fl-l { color: var(--cream); padding-right: 10px; border-right: 1px solid var(--green); }
+.fl-c { color: var(--green); padding: 0 10px; font-size: .85rem; letter-spacing: .35em; }
+.fl-r { color: var(--cream); padding-left: 10px; border-left: 1px solid var(--green); }
+.f-brand p { font-size: .82rem; color: var(--cream-d); line-height: 1.7; margin-bottom: 20px; font-weight: 300; }
+.f-col h5 {
+  font-family: var(--font-d); font-size: .6rem; font-weight: 700;
+  letter-spacing: .28em; text-transform: uppercase;
+  color: var(--green); margin-bottom: 18px;
+}
+.f-col ul { list-style: none; }
+.f-col li { margin-bottom: 9px; }
+.f-col a { font-size: .8rem; color: var(--cream-d); font-weight: 300; transition: color .25s; }
+.f-col a:hover { color: var(--cream); }
+.footer-bot {
+  padding-top: 24px; border-top: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 10px;
+}
+.footer-bot p { font-size: .7rem; color: var(--cream-d); font-weight: 300; margin: 0; }
+.footer-bot a { color: var(--green); }
+
+/* ═══════════════════════════════════════════════════════
+   SECTION HEADER SHARED
+═══════════════════════════════════════════════════════ */
+.sec-hd { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 24px; }
+.sec-hd-left {}
+.sec-hd-left h2 {
+  font-family: var(--font-d);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 800; text-transform: uppercase;
+  letter-spacing: -.01em; color: var(--cream);
+  line-height: 1.05;
+}
+.sec-hd-left p {
+  font-family: var(--font-e); font-style: italic;
+  font-size: 1rem; color: var(--cream-d);
+  max-width: 480px; line-height: 1.75; margin-top: 10px; margin-bottom: 0;
+}
+
+/* ═══════════════════════════════════════════════════════
+   FADE ANIMATIONS
+═══════════════════════════════════════════════════════ */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
+.reveal.in { opacity: 1; transform: none; }
+.reveal-d1 { transition-delay: .1s; }
+.reveal-d2 { transition-delay: .2s; }
+.reveal-d3 { transition-delay: .3s; }
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════ */
+@media (max-width: 1100px) {
+  .intro-inner { grid-template-columns: 1fr; gap: 36px; }
+  .contact-grid { grid-template-columns: 1fr; gap: 52px; }
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  .svc-row { grid-template-columns: 80px 1fr; }
+  .svc-row .svc-body { grid-column: 2; }
+  .svc-featured-inner { grid-template-columns: 1fr 1fr; }
+  .svc-featured-inner > div:nth-child(3) { display: none; }
+}
+@media (max-width: 900px) {
+  .svc-row { grid-template-columns: 1fr; }
+  .svc-num { font-size: 2.5rem; }
+  .p-grid { grid-template-columns: 1fr; }
+  .t-grid { grid-template-columns: 1fr; }
+  .svc-featured-inner { grid-template-columns: 1fr; }
+  .svc-featured-inner > div:nth-child(2) { border: none; padding: 0; }
+}
+@media (max-width: 768px) {
+  .container { padding: 0 20px; }
+  .container--narrow { padding: 0 20px; }
+  .nav { padding: 18px 20px; }
+  .nav.scrolled { padding: 13px 20px; }
+  .nav-links { display: none; }
+  .nav-burger { display: flex; }
+  .hero { flex-direction: column; height: auto; min-height: 100svh; }
+  .split-panel { flex: none !important; height: 45svh; min-height: 250px; }
+  .sp-content { padding: 0 24px 80px; }
+  .sp-dj .sp-content { text-align: left; align-items: flex-start; }
+  .sp-dj .sp-sub { text-align: left; }
+  .hero-divider { width: 100%; height: 1px; top: 45svh; bottom: auto; left: 0; transform: none; }
+  .divider-line { width: 100%; height: 1px; top: 50%; left: 0; right: 0; bottom: auto; transform: none; }
+  .divider-brand { top: 45svh; left: 50%; }
+  .hero-cta-area { padding: 48px 20px 44px; }
+  .intro { padding: 72px 0; }
+  .services { padding: 0 0 72px; }
+  .svc-row-featured { margin: 0; padding: 40px 24px; }
+  .gallery { padding: 72px 0; }
+  .g-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+  .g-item { height: 160px; grid-column: span 1 !important; grid-row: span 1 !important; }
+  .testi { padding: 72px 0; }
+  .pricing { padding: 72px 0; }
+  .contact { padding: 72px 0; }
+  .c-form { padding: 32px 24px; }
+  .f-row { grid-template-columns: 1fr; }
+  .footer-top { grid-template-columns: 1fr; }
+  .footer-bot { flex-direction: column; text-align: center; }
+  .trust-row { gap: 20px; }
+  .trust-sep { display: none; }
+  .ticker-track span { padding: 0 16px; }
+  .cta-full { padding: 72px 0; }
+  .cta-bottom { padding: 60px 0; }
+}
+
   </style>
 </head>
 <body>
 
-<!-- ============================================================
-     NAVIGATION
-============================================================ -->
+<!-- ╔══════════════════════════════════════════════════════
+     NAV
+═══════════════════════════════════════════════════════╗ -->
 <nav class="nav" id="nav">
   <div class="nav-logo">
-    <span class="logo-foto">FOTO</span>
-    <span class="logo-name">AURA</span>
-    <span class="logo-dj">DJ</span>
+    <span class="logo-l">FOTO</span>
+    <span class="logo-c">AURA</span>
+    <span class="logo-r">DJ</span>
   </div>
   <ul class="nav-links">
     <li><a href="#servicios">Servicios</a></li>
@@ -652,372 +1019,392 @@
     <li><a href="#testimonios">Testimonios</a></li>
     <li><a href="#contacto" class="nav-cta">Consultar disponibilidad</a></li>
   </ul>
-  <button class="nav-burger" id="burger" aria-label="Menú">
-    <span></span><span></span><span></span>
-  </button>
+  <button class="nav-burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
 </nav>
 
-<div class="mob-menu" id="mobMenu">
-  <button class="mob-close" id="mobClose">✕</button>
+<div class="mob" id="mob">
+  <button class="mob-x" id="mobX">CERRAR ✕</button>
   <a href="#servicios"   class="ml">Servicios</a>
   <a href="#galeria"     class="ml">Galería</a>
   <a href="#paquetes"    class="ml">Paquetes</a>
   <a href="#testimonios" class="ml">Testimonios</a>
-  <a href="#contacto" class="btn btn-primary ml">Consultar disponibilidad</a>
+  <a href="#contacto"    class="ml">Contacto</a>
 </div>
 
-<!-- ============================================================
-     HERO — SPLIT VIEW
-============================================================ -->
+<!-- ╔══════════════════════════════════════════════════════
+     HERO — THE SPLIT  (top only)
+═══════════════════════════════════════════════════════╗ -->
 <section class="hero" id="inicio">
 
   <!-- LEFT: PHOTOGRAPHY -->
-  <div class="panel panel-photo">
-    <div class="panel-bg"></div>
-    <div class="panel-content">
-      <span class="panel-eyebrow">Fotografía</span>
-      <h2 class="panel-title">Cada<br><em>momento,</em><br>eterno.</h2>
-      <p class="panel-desc">Captamos la emoción, la luz y la esencia de tu boda o evento.</p>
+  <div class="split-panel sp-photo">
+    <div class="sp-bg"></div>
+    <div class="sp-content">
+      <span class="sp-label">Fotografía</span>
+      <h2 class="sp-title">Cada<br>momento<br>eterno</h2>
+      <p class="sp-sub">Fotos que cuentan tu historia como nadie más puede contarla.</p>
     </div>
   </div>
 
-  <!-- CENTER SPLIT BRAND -->
-  <div class="hero-split">
-    <div class="split-line"></div>
-    <div class="split-brand">
-      <div class="split-name">AURA</div>
-      <span class="split-sub">Foto · DJ · Denia</span>
+  <!-- CENTER DIVIDER — brand card on the split line -->
+  <div class="hero-divider">
+    <div class="divider-line"></div>
+    <div class="divider-brand">
+      <div class="db-inner">
+        <span class="db-name">AURA</span>
+        <span class="db-sub">Foto · DJ · Denia</span>
+      </div>
     </div>
   </div>
 
   <!-- RIGHT: DJ -->
-  <div class="panel panel-dj">
-    <div class="panel-bg"></div>
-    <div class="panel-content">
-      <span class="panel-eyebrow">DJ Profesional</span>
-      <h2 class="panel-title">Que la<br><em>música</em><br>no pare.</h2>
-      <p class="panel-desc">Sets personalizados para que tu fiesta sea inolvidable.</p>
+  <div class="split-panel sp-dj">
+    <div class="sp-bg"></div>
+    <div class="sp-content">
+      <span class="sp-label">DJ Profesional</span>
+      <h2 class="sp-title">Que la<br>música<br>no pare</h2>
+      <p class="sp-sub">Sets personalizados para que tu fiesta sea inolvidable.</p>
     </div>
   </div>
 
-  <!-- BOTTOM OVERLAY -->
-  <div class="hero-foot">
-    <h1 class="hero-h1">Tu fotógrafo y DJ<br>en <em>un solo contrato</em></h1>
-    <p class="hero-sub">Bodas y fiestas perfectas en Denia y Costa Blanca — sin estrés, con estilo</p>
-    <div class="hero-ctas">
-      <a href="#contacto" class="btn btn-primary">Consultar disponibilidad</a>
-      <a href="#galeria"  class="btn btn-outline">Ver nuestros trabajos</a>
+  <!-- BOTTOM: MAIN HEADLINE + CTA -->
+  <div class="hero-cta-area">
+    <p class="hero-headline">Tu fotógrafo y DJ<br><span>en un solo contrato</span></p>
+    <p class="hero-tagline">Bodas y fiestas perfectas en Denia y Costa Blanca — sin estrés, con estilo</p>
+    <div class="hero-btns">
+      <a href="#contacto" class="btn btn-light">
+        Consultar disponibilidad
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="#galeria" class="btn btn-outline">Ver nuestros trabajos</a>
     </div>
   </div>
 
 </section>
 
-<!-- VALUE STRIP -->
-<div class="vstrip">
-  <div class="container">
-    <div class="vstrip-inner">
-      <div class="vstrip-item"><span class="vstrip-icon">📍</span><span>Denia · Costa Blanca · Alicante</span></div>
-      <div class="vstrip-sep"></div>
-      <div class="vstrip-item"><span class="vstrip-icon">🎯</span><span>Fotógrafo + DJ en un solo contrato</span></div>
-      <div class="vstrip-sep"></div>
-      <div class="vstrip-item"><span class="vstrip-icon">💬</span><span>Atención personalizada en español</span></div>
-      <div class="vstrip-sep"></div>
-      <div class="vstrip-item"><span class="vstrip-icon">🌿</span><span>+150 eventos realizados</span></div>
-    </div>
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track" id="ticker">
+    <span>Bodas</span><span class="sep">·</span>
+    <span>Quinceañeras</span><span class="sep">·</span>
+    <span>Eventos Corporativos</span><span class="sep">·</span>
+    <span>Denia</span><span class="sep">·</span>
+    <span>Costa Blanca</span><span class="sep">·</span>
+    <span>Alicante</span><span class="sep">·</span>
+    <span>Un solo contrato</span><span class="sep">·</span>
+    <span>Mismo estilo</span><span class="sep">·</span>
+    <span>Misma energía</span><span class="sep">·</span>
+    <span>Bodas</span><span class="sep">·</span>
+    <span>Quinceañeras</span><span class="sep">·</span>
+    <span>Eventos Corporativos</span><span class="sep">·</span>
+    <span>Denia</span><span class="sep">·</span>
+    <span>Costa Blanca</span><span class="sep">·</span>
+    <span>Alicante</span><span class="sep">·</span>
+    <span>Un solo contrato</span><span class="sep">·</span>
+    <span>Mismo estilo</span><span class="sep">·</span>
+    <span>Misma energía</span><span class="sep">·</span>
   </div>
 </div>
 
-<!-- ============================================================
-     PROMISE / ONE STOP SHOP
-============================================================ -->
-<section class="promise" id="nosotros">
+<!-- ╔══════════════════════════════════════════════════════
+     INTRO STATEMENT
+═══════════════════════════════════════════════════════╗ -->
+<section class="intro" id="nosotros">
   <div class="container">
-    <div class="promise-inner">
-      <div class="promise-text fi">
-        <span class="label">Por qué elegirnos</span>
-        <h2>Un solo contrato.<br>Mismo estilo.<br>Misma energía.</h2>
-        <p>Imagina que el día de tu boda no tienes que coordinar a tres proveedores distintos. Tu fotógrafo y tu DJ comparten la misma visión, el mismo ritmo y la misma pasión por hacer tu fiesta perfecta.</p>
-        <p>Eso es AURA. Un equipo con un solo objetivo: que vivas el mejor día de tu vida sin preocuparte de nada más.</p>
-        <a href="#contacto" class="btn btn-primary">Solicitar presupuesto sin compromiso</a>
+    <div class="intro-inner">
+      <div class="intro-left reveal">
+        <span class="eyebrow">Por qué AURA</span>
+        <p>Imagina el día de tu boda sin tener que coordinar a tres proveedores distintos. Tu fotógrafo y tu DJ comparten la misma visión, el mismo ritmo, la misma pasión.</p>
+        <p>Eso es AURA.</p>
       </div>
-      <div class="feat-grid fi">
-        <div class="feat"><div class="feat-icon">🎯</div><h4>Sin estrés de coordinación</h4><p>Un punto de contacto para todo. Menos emails, menos nervios.</p></div>
-        <div class="feat"><div class="feat-icon">🎨</div><h4>Estilo coherente</h4><p>Las fotos y la música hablan el mismo idioma visual y emocional.</p></div>
-        <div class="feat"><div class="feat-icon">💰</div><h4>Ahorra tiempo y dinero</h4><p>Pack combinado con precio especial. Sin sorpresas el día B.</p></div>
-        <div class="feat"><div class="feat-icon">🌟</div><h4>Experiencia local</h4><p>Conocemos Denia y Costa Blanca como nadie. Los mejores rincones para tus fotos.</p></div>
+      <div class="intro-right reveal reveal-d1">
+        <h2>Un solo contrato.<br><em>Mismo estilo.</em><br>Misma energía.</h2>
+        <div class="intro-cta">
+          <a href="#contacto" class="btn btn-light">
+            Solicitar presupuesto sin compromiso
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============================================================
-     SERVICES
-============================================================ -->
+<!-- ╔══════════════════════════════════════════════════════
+     SERVICES — EDITORIAL BANDS
+═══════════════════════════════════════════════════════╗ -->
 <section class="services" id="servicios">
   <div class="container">
-    <div class="sec-header fi">
-      <div class="ornament"><div class="ornament-line"></div><div class="ornament-dot"></div><div class="ornament-line"></div></div>
-      <span class="label">Nuestros servicios</span>
-      <h2>Lo que ofrecemos</h2>
-      <p>Desde una sesión íntima de retratos hasta una gran boda con DJ y fotografía. Cada servicio diseñado para superar tus expectativas.</p>
-    </div>
-    <div class="svc-grid">
 
-      <!-- PHOTOGRAPHY -->
-      <div class="svc fi">
-        <div class="svc-icon">📷</div>
-        <h3>Fotografía</h3>
-        <span class="svc-sub">Bodas · Quinceañeras · Eventos · Retratos</span>
-        <p>Fotos que cuentan tu historia como nadie más puede contarla. Estilo editorial, cálido y emotivo. Cada imagen captura lo que sentiste ese día.</p>
+    <!-- 01 FOTOGRAFÍA -->
+    <div class="svc-row reveal">
+      <div class="svc-num">01</div>
+      <div class="svc-head">
+        <span class="eyebrow">Fotografía</span>
+        <h3>Fotografía<br>de bodas<br>y eventos</h3>
+        <p>Fotos que cuentan tu historia como nadie más puede contarla. Estilo editorial, cálido y emotivo. Cada imagen captura exactamente lo que sentiste ese día.</p>
+        <div class="svc-price-line">Desde <span>€1.200</span></div>
+        <a href="#contacto" class="btn btn-outline">Pedir presupuesto</a>
+      </div>
+      <div class="svc-body">
         <ul class="svc-list">
           <li>Cobertura completa del evento (8–12 h)</li>
           <li>+300 fotos editadas en alta resolución</li>
-          <li>Galería digital privada</li>
+          <li>Galería digital privada online</li>
           <li>Sesión preboda opcional</li>
           <li>Entrega en 4–6 semanas</li>
-          <li>Licencia de uso personal</li>
+          <li>Licencia de uso personal ilimitado</li>
+          <li>Álbum impreso de lujo (opcional)</li>
         </ul>
-        <span class="svc-price-from">Desde</span>
-        <div class="svc-price-amt"><sup>€</sup>1.200</div>
+      </div>
+    </div>
+
+    <!-- 02 DJ -->
+    <div class="svc-row reveal">
+      <div class="svc-num">02</div>
+      <div class="svc-head">
+        <span class="eyebrow">DJ Profesional</span>
+        <h3>DJ para<br>bodas y<br>fiestas</h3>
+        <p>Música que conecta con tu historia y tu gente. Sets 100% personalizados que hacen que nadie quiera sentarse. Desde el vals hasta las 4 de la mañana.</p>
+        <div class="svc-price-line">Desde <span>€800</span></div>
         <a href="#contacto" class="btn btn-outline">Pedir presupuesto</a>
       </div>
-
-      <!-- DJ -->
-      <div class="svc fi">
-        <div class="svc-icon">🎧</div>
-        <h3>DJ Profesional</h3>
-        <span class="svc-sub">Bodas · Quinceañeras · Eventos Corporativos</span>
-        <p>Música que conecta con tu historia y tu gente. Sets personalizados que hacen que nadie quiera sentarse, desde el vals hasta las 4 de la mañana.</p>
+      <div class="svc-body">
         <ul class="svc-list">
           <li>Set personalizado según tus gustos</li>
           <li>Equipo de sonido profesional</li>
           <li>Iluminación ambiental LED incluida</li>
           <li>Ceremonia + cóctel + fiesta</li>
+          <li>Reunión de planificación musical previa</li>
           <li>Coordinación con el venue</li>
           <li>Disponible hasta las 4:00 h</li>
         </ul>
-        <span class="svc-price-from">Desde</span>
-        <div class="svc-price-amt"><sup>€</sup>800</div>
-        <a href="#contacto" class="btn btn-outline">Pedir presupuesto</a>
       </div>
-
-      <!-- FULL EXPERIENCE -->
-      <div class="svc svc-star fi">
-        <div class="svc-badge">Más popular ✨</div>
-        <div class="svc-icon">🌟</div>
-        <h3>La Experiencia Completa</h3>
-        <span class="svc-sub">Fotógrafo + DJ en un solo contrato</span>
-        <p>La combinación perfecta para tu boda o fiesta. Un equipo, una visión, un día memorable. Contrata los dos servicios y ahorra tiempo, dinero y energía.</p>
-        <ul class="svc-list">
-          <li>Todo lo incluido en Fotografía</li>
-          <li>Todo lo incluido en DJ</li>
-          <li>Sesión preboda gratuita</li>
-          <li>Reunión de planificación previa</li>
-          <li>Álbum impreso de lujo (opcional)</li>
-          <li>Descuento exclusivo pack combinado</li>
-        </ul>
-        <span class="svc-price-from">Desde</span>
-        <div class="svc-price-amt"><sup>€</sup>1.800</div>
-        <a href="#contacto" class="btn btn-primary">Reservar la experiencia</a>
-      </div>
-
     </div>
+
+    <!-- 03 FEATURED PACK -->
+    <div class="svc-row-featured reveal">
+      <div class="svc-featured-inner">
+        <div>
+          <span class="svc-featured-label">Más elegido ✦</span>
+          <h3>La Experiencia<br>Completa</h3>
+          <p style="font-family:var(--font-e);font-style:italic;color:var(--cream-d);line-height:1.75;margin-bottom:28px;">
+            Fotógrafo + DJ en un solo contrato. Un equipo, una visión, un día perfecto. Contrata los dos y ahorra tiempo, dinero y energía.
+          </p>
+        </div>
+        <div>
+          <ul class="svc-list">
+            <li>Todo lo del pack Fotografía</li>
+            <li>Todo lo del pack DJ</li>
+            <li>Sesión preboda gratuita</li>
+            <li>Reunión de planificación completa</li>
+            <li>Coordinación total el día del evento</li>
+            <li>Precio especial pack combinado</li>
+          </ul>
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;justify-content:center;gap:20px;">
+          <div>
+            <span style="font-family:var(--font-d);font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green);display:block;margin-bottom:6px;">Desde</span>
+            <div style="font-family:var(--font-d);font-size:3.5rem;font-weight:800;color:var(--cream);line-height:1;letter-spacing:-.03em;"><sup style="font-size:1.4rem;color:var(--cream-d);">€</sup>1.800</div>
+          </div>
+          <a href="#contacto" class="btn btn-light">
+            Reservar la experiencia
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
-<!-- MID-PAGE CTA BAND -->
-<div class="cta-band">
-  <div class="container">
-    <h2>¿Tienes fecha en mente?</h2>
+<!-- ╔══════════════════════════════════════════════════════
+     FULL WIDTH CTA — cream background
+═══════════════════════════════════════════════════════╗ -->
+<div class="cta-full">
+  <div class="container--narrow">
+    <h2>¿Tienes fecha<br><em>en mente?</em></h2>
     <p>Las fechas se reservan con meses de antelación. Consulta ahora si tu día está disponible.</p>
-    <div class="btns">
-      <a href="#contacto" class="btn btn-primary">Consultar disponibilidad</a>
-      <a href="#paquetes"  class="btn btn-outline">Ver paquetes y precios</a>
+    <div class="cta-btns">
+      <a href="#contacto" class="btn btn-dark">
+        Consultar disponibilidad
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="#paquetes" class="btn btn-ghost">Ver paquetes y precios</a>
     </div>
   </div>
 </div>
 
-<!-- ============================================================
+<!-- ╔══════════════════════════════════════════════════════
      GALLERY
-============================================================ -->
+═══════════════════════════════════════════════════════╗ -->
 <section class="gallery" id="galeria">
   <div class="container">
-    <div class="sec-header fi">
-      <div class="ornament"><div class="ornament-line"></div><div class="ornament-dot"></div><div class="ornament-line"></div></div>
-      <span class="label">Galería</span>
-      <h2>Nuestros trabajos</h2>
-      <p>Cada evento es único. Aquí tienes una muestra de lo que creamos juntos.</p>
-    </div>
-    <div class="gal-tabs">
-      <button class="gal-tab active" data-tab="bodas">Bodas</button>
-      <button class="gal-tab" data-tab="quince">Quinceañeras</button>
-      <button class="gal-tab" data-tab="corp">Eventos Corporativos</button>
-      <button class="gal-tab" data-tab="retrato">Retratos</button>
-    </div>
-
-    <div class="gal-panel active" id="tab-bodas">
-      <div class="gal-grid">
-        <div class="gi"><div class="gi-bg gw1"></div><div class="gi-ov"><span class="gi-lbl">Boda en la playa · Denia</span></div></div>
-        <div class="gi"><div class="gi-bg gw2"></div><div class="gi-ov"><span class="gi-lbl">Boda íntima · Jávea</span></div></div>
-        <div class="gi"><div class="gi-bg gw3"></div><div class="gi-ov"><span class="gi-lbl">Ceremonia civil · Alicante</span></div></div>
-        <div class="gi"><div class="gi-bg gw4"></div><div class="gi-ov"><span class="gi-lbl">Boda de destino · Costa Blanca</span></div></div>
-        <div class="gi"><div class="gi-bg gw5"></div><div class="gi-ov"><span class="gi-lbl">Celebración al aire libre</span></div></div>
-      </div>
-      <div class="gal-desc">
-        <p>Bodas en Denia, Costa Blanca y toda la provincia de Alicante. Desde ceremonias íntimas hasta grandes celebraciones.</p>
-        <a href="#contacto" class="btn btn-outline">Reserva tu boda</a>
+    <div class="sec-hd reveal">
+      <div class="sec-hd-left">
+        <span class="eyebrow">Galería</span>
+        <h2>Nuestros trabajos</h2>
+        <p>Cada evento es único. Una muestra de lo que creamos juntos.</p>
       </div>
     </div>
 
-    <div class="gal-panel" id="tab-quince">
-      <div class="gal-grid">
-        <div class="gi"><div class="gi-bg gq1"></div><div class="gi-ov"><span class="gi-lbl">Quinceañera · Denia</span></div></div>
-        <div class="gi"><div class="gi-bg gq2"></div><div class="gi-ov"><span class="gi-lbl">Fiesta hispana · Alicante</span></div></div>
-        <div class="gi"><div class="gi-bg gq3"></div><div class="gi-ov"><span class="gi-lbl">Celebración familiar</span></div></div>
-        <div class="gi"><div class="gi-bg gq4"></div><div class="gi-ov"><span class="gi-lbl">Quinceañera íntima</span></div></div>
-        <div class="gi"><div class="gi-bg gq5"></div><div class="gi-ov"><span class="gi-lbl">Fiesta de 15 años · Costa Blanca</span></div></div>
-      </div>
-      <div class="gal-desc">
-        <p>Quinceañeras y fiestas hispanas únicas. Entendemos la tradición y la hacemos brillar con nuestra propia magia.</p>
-        <a href="#contacto" class="btn btn-outline">Reserva tu Quinceañera</a>
-      </div>
+    <div class="g-tabs">
+      <button class="g-tab on" data-tab="bodas">Bodas</button>
+      <button class="g-tab" data-tab="quince">Quinceañeras</button>
+      <button class="g-tab" data-tab="corp">Corporativos</button>
+      <button class="g-tab" data-tab="retrato">Retratos</button>
     </div>
 
-    <div class="gal-panel" id="tab-corp">
-      <div class="gal-grid">
-        <div class="gi"><div class="gi-bg gc1"></div><div class="gi-ov"><span class="gi-lbl">Evento corporativo · Alicante</span></div></div>
-        <div class="gi"><div class="gi-bg gc2"></div><div class="gi-ov"><span class="gi-lbl">Cena de empresa · Costa Blanca</span></div></div>
-        <div class="gi"><div class="gi-bg gc3"></div><div class="gi-ov"><span class="gi-lbl">Lanzamiento de producto</span></div></div>
-        <div class="gi"><div class="gi-bg gc4"></div><div class="gi-ov"><span class="gi-lbl">Branding &amp; contenido</span></div></div>
-        <div class="gi"><div class="gi-bg gc5"></div><div class="gi-ov"><span class="gi-lbl">Team building · Denia</span></div></div>
+    <div class="g-panel on" id="gt-bodas">
+      <div class="g-grid">
+        <div class="g-item"><div class="g-bg bg-w1"></div><div class="g-ov"><span class="g-lbl">Boda en la playa · Denia</span></div></div>
+        <div class="g-item"><div class="g-bg bg-w2"></div><div class="g-ov"><span class="g-lbl">Boda íntima · Jávea</span></div></div>
+        <div class="g-item"><div class="g-bg bg-w3"></div><div class="g-ov"><span class="g-lbl">Ceremonia civil · Alicante</span></div></div>
+        <div class="g-item"><div class="g-bg bg-w4"></div><div class="g-ov"><span class="g-lbl">Boda de destino · Costa Blanca</span></div></div>
+        <div class="g-item"><div class="g-bg bg-w5"></div><div class="g-ov"><span class="g-lbl">Celebración al aire libre</span></div></div>
       </div>
-      <div class="gal-desc">
-        <p>Eventos corporativos con impacto. Fotografía y DJ profesional para tu empresa, en Denia y toda la Costa Blanca.</p>
-        <a href="#contacto" class="btn btn-outline">Reserva tu evento</a>
-      </div>
+      <div class="g-note"><p>Bodas en Denia, Costa Blanca y Alicante — íntimas o grandes celebraciones.</p><a href="#contacto" class="btn btn-outline">Reserva tu boda</a></div>
     </div>
 
-    <div class="gal-panel" id="tab-retrato">
-      <div class="gal-grid">
-        <div class="gi"><div class="gi-bg gp1"></div><div class="gi-ov"><span class="gi-lbl">Sesión de pareja · Denia</span></div></div>
-        <div class="gi"><div class="gi-bg gp2"></div><div class="gi-ov"><span class="gi-lbl">Retrato familiar · Costa Blanca</span></div></div>
-        <div class="gi"><div class="gi-bg gp3"></div><div class="gi-ov"><span class="gi-lbl">Preboda íntima</span></div></div>
-        <div class="gi"><div class="gi-bg gp4"></div><div class="gi-ov"><span class="gi-lbl">Sesión editorial</span></div></div>
-        <div class="gi"><div class="gi-bg gp5"></div><div class="gi-ov"><span class="gi-lbl">Retrato personal</span></div></div>
+    <div class="g-panel" id="gt-quince">
+      <div class="g-grid">
+        <div class="g-item"><div class="g-bg bg-q1"></div><div class="g-ov"><span class="g-lbl">Quinceañera · Denia</span></div></div>
+        <div class="g-item"><div class="g-bg bg-q2"></div><div class="g-ov"><span class="g-lbl">Fiesta hispana · Alicante</span></div></div>
+        <div class="g-item"><div class="g-bg bg-q3"></div><div class="g-ov"><span class="g-lbl">Celebración familiar</span></div></div>
+        <div class="g-item"><div class="g-bg bg-q4"></div><div class="g-ov"><span class="g-lbl">Quinceañera íntima</span></div></div>
+        <div class="g-item"><div class="g-bg bg-q5"></div><div class="g-ov"><span class="g-lbl">Fiesta de 15 años · Costa Blanca</span></div></div>
       </div>
-      <div class="gal-desc">
-        <p>Sesiones de retrato íntimas y auténticas. Parejas, familias y marca personal en los rincones más bonitos de la Costa Blanca.</p>
-        <a href="#contacto" class="btn btn-outline">Reserva tu sesión</a>
+      <div class="g-note"><p>Quinceañeras y fiestas hispanas con alegría, emoción y memorias para toda la vida.</p><a href="#contacto" class="btn btn-outline">Reserva tu Quinceañera</a></div>
+    </div>
+
+    <div class="g-panel" id="gt-corp">
+      <div class="g-grid">
+        <div class="g-item"><div class="g-bg bg-c1"></div><div class="g-ov"><span class="g-lbl">Evento corporativo · Alicante</span></div></div>
+        <div class="g-item"><div class="g-bg bg-c2"></div><div class="g-ov"><span class="g-lbl">Cena de empresa · Costa Blanca</span></div></div>
+        <div class="g-item"><div class="g-bg bg-c3"></div><div class="g-ov"><span class="g-lbl">Lanzamiento de producto</span></div></div>
+        <div class="g-item"><div class="g-bg bg-c4"></div><div class="g-ov"><span class="g-lbl">Branding &amp; contenido</span></div></div>
+        <div class="g-item"><div class="g-bg bg-c5"></div><div class="g-ov"><span class="g-lbl">Team building · Denia</span></div></div>
       </div>
+      <div class="g-note"><p>Fotografía y DJ profesional para eventos corporativos en toda la Costa Blanca.</p><a href="#contacto" class="btn btn-outline">Reserva tu evento</a></div>
+    </div>
+
+    <div class="g-panel" id="gt-retrato">
+      <div class="g-grid">
+        <div class="g-item"><div class="g-bg bg-p1"></div><div class="g-ov"><span class="g-lbl">Sesión de pareja · Denia</span></div></div>
+        <div class="g-item"><div class="g-bg bg-p2"></div><div class="g-ov"><span class="g-lbl">Retrato familiar · Costa Blanca</span></div></div>
+        <div class="g-item"><div class="g-bg bg-p3"></div><div class="g-ov"><span class="g-lbl">Preboda íntima</span></div></div>
+        <div class="g-item"><div class="g-bg bg-p4"></div><div class="g-ov"><span class="g-lbl">Sesión editorial</span></div></div>
+        <div class="g-item"><div class="g-bg bg-p5"></div><div class="g-ov"><span class="g-lbl">Retrato personal</span></div></div>
+      </div>
+      <div class="g-note"><p>Sesiones de retrato íntimas y auténticas en los rincones más bonitos de la Costa Blanca.</p><a href="#contacto" class="btn btn-outline">Reserva tu sesión</a></div>
     </div>
 
   </div>
 </section>
 
-<!-- ============================================================
+<!-- ╔══════════════════════════════════════════════════════
      TESTIMONIALS
-============================================================ -->
+═══════════════════════════════════════════════════════╗ -->
 <section class="testi" id="testimonios">
   <div class="container">
-    <div class="sec-header fi">
-      <div class="ornament"><div class="ornament-line"></div><div class="ornament-dot"></div><div class="ornament-line"></div></div>
-      <span class="label">Testimonios</span>
-      <h2>Lo que dicen nuestras parejas</h2>
-      <p>Cada boda, cada fiesta, cada evento es una historia que nos confían. Esto es lo que dicen quienes ya vivieron la experiencia AURA.</p>
+    <div class="sec-hd reveal" style="margin-bottom:52px;">
+      <div class="sec-hd-left">
+        <span class="eyebrow">Testimonios</span>
+        <h2>Lo que dicen<br>nuestras parejas</h2>
+      </div>
     </div>
-    <div class="testi-grid">
-
-      <div class="tcard fi">
-        <div class="tquote">"</div>
-        <div class="tstars">★★★★★</div>
-        <p class="ttext">Contratar a AURA fue la mejor decisión de nuestra boda. No tener que coordinar un fotógrafo y un DJ por separado fue un alivio enorme. Las fotos son preciosas y la música hizo que nadie se sentara en toda la noche.</p>
-        <div class="tauthor">
-          <div class="tavatar">L</div>
+    <div class="t-grid">
+      <div class="t-item reveal">
+        <div class="t-mark">"</div>
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">Contratar a AURA fue la mejor decisión de nuestra boda. No tener que coordinar fotógrafo y DJ por separado fue un alivio enorme. Las fotos son preciosas y la música hizo que nadie se sentara en toda la noche.</p>
+        <div class="t-by">
+          <div class="t-av">L</div>
           <div><strong>Laura y Carlos M.</strong><span>Boda en Denia · Septiembre 2024</span></div>
         </div>
       </div>
-
-      <div class="tcard fi">
-        <div class="tquote">"</div>
-        <div class="tstars">★★★★★</div>
-        <p class="ttext">Mi hija cumplía sus quinceañeras y quería algo especial. AURA entendió perfectamente lo que queríamos: una fiesta con mucha alegría, fotos emotivas y música que hizo bailar a toda la familia. Recuerdos para toda la vida.</p>
-        <div class="tauthor">
-          <div class="tavatar">M</div>
+      <div class="t-item reveal reveal-d1">
+        <div class="t-mark">"</div>
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">Mi hija cumplía sus quinceañeras y quería algo especial. AURA entendió perfectamente lo que buscábamos: una fiesta con mucha alegría, fotos emotivas y música que hizo bailar a toda la familia. Recuerdos para toda la vida.</p>
+        <div class="t-by">
+          <div class="t-av">M</div>
           <div><strong>María González</strong><span>Quinceañera en Alicante · Julio 2024</span></div>
         </div>
       </div>
-
-      <div class="tcard fi">
-        <div class="tquote">"</div>
-        <div class="tstars">★★★★★</div>
-        <p class="ttext">Para nuestro evento de empresa buscábamos algo diferente, con clase y con energía. AURA lo consiguió. Las fotos quedaron espectaculares y el set del DJ fue el broche perfecto para la noche. Totalmente recomendados.</p>
-        <div class="tauthor">
-          <div class="tavatar">A</div>
+      <div class="t-item reveal reveal-d2">
+        <div class="t-mark">"</div>
+        <div class="t-stars">★★★★★</div>
+        <p class="t-text">Para nuestro evento de empresa buscábamos algo diferente, con clase y energía. AURA lo consiguió. Las fotos quedaron espectaculares y el set del DJ fue el broche perfecto para la noche. Totalmente recomendados.</p>
+        <div class="t-by">
+          <div class="t-av">A</div>
           <div><strong>Andrés Torralba</strong><span>Evento Corporativo · Valencia · 2024</span></div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- TRUST BAR -->
+<!-- TRUST ROW -->
 <div class="trust">
   <div class="container">
-    <div class="trust-inner">
-      <div class="trust-item"><span class="trust-icon">📍</span><span>Fotógrafo y DJ en Denia y Costa Blanca</span></div>
-      <div class="trust-item"><span class="trust-icon">🌍</span><span>Servicios en español para familias hispanas</span></div>
-      <div class="trust-item"><span class="trust-icon">🏖️</span><span>Bodas en la playa y fincas al aire libre</span></div>
-      <div class="trust-item"><span class="trust-icon">⭐</span><span>+150 eventos · 5 estrellas en Google</span></div>
-      <div class="trust-item"><span class="trust-icon">🗺️</span><span>Alicante · Jávea · Benidorm · Valencia</span></div>
+    <div class="trust-row">
+      <div class="trust-item"><span>📍</span><span>Denia · Costa Blanca · Alicante</span></div>
+      <div class="trust-sep"></div>
+      <div class="trust-item"><span>🌍</span><span>Atención en español</span></div>
+      <div class="trust-sep"></div>
+      <div class="trust-item"><span>⭐</span><span>+150 eventos · 5 estrellas</span></div>
+      <div class="trust-sep"></div>
+      <div class="trust-item"><span>🏖️</span><span>Bodas en playa y fincas</span></div>
+      <div class="trust-sep"></div>
+      <div class="trust-item"><span>✦</span><span>Jávea · Benidorm · Valencia</span></div>
     </div>
   </div>
 </div>
 
-<!-- ============================================================
+<!-- ╔══════════════════════════════════════════════════════
      PRICING
-============================================================ -->
+═══════════════════════════════════════════════════════╗ -->
 <section class="pricing" id="paquetes">
   <div class="container">
-    <div class="sec-header fi">
-      <div class="ornament"><div class="ornament-line"></div><div class="ornament-dot"></div><div class="ornament-line"></div></div>
-      <span class="label">Paquetes y precios</span>
-      <h2>Elige tu experiencia</h2>
-      <p>Precios transparentes, sin sorpresas. Pídenos un presupuesto personalizado sin compromiso.</p>
+    <div class="sec-hd reveal">
+      <div class="sec-hd-left">
+        <span class="eyebrow">Paquetes y precios</span>
+        <h2>Elige tu<br>experiencia</h2>
+        <p>Precios transparentes, sin sorpresas. Presupuesto personalizado sin compromiso.</p>
+      </div>
     </div>
-    <div class="price-grid">
+    <div class="p-grid">
 
-      <div class="pcard fi">
-        <div class="picon">📷</div>
-        <h3>Sólo Fotografía</h3>
-        <span class="psub">Para quien ya tiene DJ</span>
-        <div class="pamt">
-          <span class="pfrom">Desde</span>
-          <div class="pprice"><sup>€</sup>1.200</div>
-          <p class="pnote">Presupuesto personalizado según horas</p>
+      <div class="p-card reveal">
+        <h3>Fotografía</h3>
+        <span class="p-sub">Para quien ya tiene DJ</span>
+        <div class="p-amount">
+          <span class="p-from">Desde</span>
+          <div class="p-price"><sup>€</sup>1.200</div>
+          <p class="p-note">Presupuesto según horas y evento</p>
         </div>
-        <ul class="plist">
-          <li>8 horas de cobertura fotográfica</li>
-          <li>+300 fotos editadas en alta resolución</li>
+        <ul class="p-list">
+          <li>8 horas de cobertura</li>
+          <li>+300 fotos editadas</li>
           <li>Galería digital privada</li>
-          <li>Álbum impreso (opcional, +precio)</li>
-          <li>Sesión preboda (opcional, +precio)</li>
+          <li>Álbum impreso (opcional)</li>
+          <li>Sesión preboda (opcional)</li>
           <li class="no">DJ no incluido</li>
         </ul>
         <a href="#contacto" class="btn btn-outline">Pedir presupuesto</a>
       </div>
 
-      <div class="pcard fi">
-        <div class="picon">🎧</div>
-        <h3>Sólo DJ</h3>
-        <span class="psub">Para quien ya tiene fotógrafo</span>
-        <div class="pamt">
-          <span class="pfrom">Desde</span>
-          <div class="pprice"><sup>€</sup>800</div>
-          <p class="pnote">Incluye equipo de sonido e iluminación</p>
+      <div class="p-card reveal reveal-d1">
+        <h3>DJ Profesional</h3>
+        <span class="p-sub">Para quien ya tiene fotógrafo</span>
+        <div class="p-amount">
+          <span class="p-from">Desde</span>
+          <div class="p-price"><sup>€</sup>800</div>
+          <p class="p-note">Incluye sonido e iluminación</p>
         </div>
-        <ul class="plist">
-          <li>Ceremonia + cóctel + fiesta (hasta 4 h)</li>
+        <ul class="p-list">
+          <li>Ceremonia + cóctel + fiesta</li>
           <li>Equipo de sonido profesional</li>
           <li>Iluminación ambiental LED</li>
           <li>Reunión de planificación musical</li>
@@ -1027,71 +1414,69 @@
         <a href="#contacto" class="btn btn-outline">Pedir presupuesto</a>
       </div>
 
-      <div class="pcard pcard-star fi">
-        <div class="pbadge">La más elegida ✨</div>
-        <div class="picon">🌟</div>
-        <h3>La Experiencia Completa</h3>
-        <span class="psub">Fotógrafo + DJ · Todo incluido</span>
-        <div class="pamt">
-          <span class="pfrom">Desde</span>
-          <div class="pprice"><sup>€</sup>1.800</div>
-          <p class="pnote">Ahorro vs. contratar por separado</p>
+      <div class="p-card p-card-feat reveal reveal-d2">
+        <div class="p-tag">La más elegida ✦</div>
+        <h3>La Experiencia<br>Completa</h3>
+        <span class="p-sub">Fotógrafo + DJ · Todo incluido</span>
+        <div class="p-amount">
+          <span class="p-from">Desde</span>
+          <div class="p-price"><sup>€</sup>1.800</div>
+          <p class="p-note">Ahorro vs. contratar por separado</p>
         </div>
-        <ul class="plist">
-          <li>Todo lo del pack Fotografía</li>
-          <li>Todo lo del pack DJ</li>
-          <li>Sesión preboda gratuita incluida</li>
+        <ul class="p-list">
+          <li>Todo del pack Fotografía</li>
+          <li>Todo del pack DJ</li>
+          <li>Sesión preboda gratuita</li>
           <li>Reunión de planificación completa</li>
           <li>Coordinación total del día</li>
           <li>Precio especial combinado</li>
         </ul>
-        <a href="#contacto" class="btn btn-primary">Reservar la experiencia</a>
+        <a href="#contacto" class="btn btn-light">Reservar la experiencia</a>
       </div>
 
     </div>
-    <p style="text-align:center;color:var(--text-m);font-size:.78rem;margin-top:28px;">
-      ¿No encuentras lo que buscas? <a href="#contacto" style="color:var(--green-a);">Escríbenos</a> y creamos un paquete personalizado para tu evento.
+    <p style="text-align:center;color:var(--cream-d);font-size:.76rem;margin-top:24px;font-weight:300;">
+      ¿Necesitas algo diferente? <a href="#contacto" style="color:var(--green);">Escríbenos</a> y creamos un paquete a medida.
     </p>
   </div>
 </section>
 
-<!-- ============================================================
-     CONTACT / BOOKING FORM
-============================================================ -->
+<!-- ╔══════════════════════════════════════════════════════
+     CONTACT
+═══════════════════════════════════════════════════════╗ -->
 <section class="contact" id="contacto">
   <div class="container">
-    <div class="contact-inner">
-
-      <div class="cinfo fi">
-        <span class="label">Contacto</span>
-        <h2>Hablemos de tu boda o evento</h2>
+    <div class="contact-grid">
+      <div class="c-info reveal">
+        <span class="eyebrow">Contacto</span>
+        <h2>Hablemos de<br>tu boda</h2>
         <p>Cuéntanos tu historia. Sin compromiso, sin presión. En 24–48 horas te decimos si tu fecha está disponible y te enviamos un presupuesto personalizado.</p>
-        <p><em>"Nos gusta conocer a cada pareja y familia antes de confirmar. Así aseguramos que somos el equipo perfecto para vosotros."</em></p>
-        <div class="cdetails">
-          <div class="cdet"><div class="cdet-ic">📍</div><span>Denia, Alicante · Costa Blanca, España</span></div>
-          <div class="cdet"><div class="cdet-ic">📱</div><span>+34 600 000 000 (también WhatsApp)</span></div>
-          <div class="cdet"><div class="cdet-ic">📧</div><span>hola@a-aura.com</span></div>
-          <div class="cdet"><div class="cdet-ic">🕐</div><span>Lun–Vie 10:00–19:00 · Sáb bajo cita</span></div>
+        <p><em>"Nos gusta conocer a cada pareja antes de confirmar. Así aseguramos que somos el equipo perfecto para vosotros."</em></p>
+        <div class="c-details">
+          <div class="c-row"><div class="c-ic">📍</div><span>Denia, Alicante · Costa Blanca</span></div>
+          <div class="c-row"><div class="c-ic">📱</div><span>+34 600 000 000 · WhatsApp disponible</span></div>
+          <div class="c-row"><div class="c-ic">📧</div><span>hola@a-aura.com</span></div>
+          <div class="c-row"><div class="c-ic">🕐</div><span>Lun–Vie 10:00–19:00 · Sáb bajo cita</span></div>
         </div>
-        <div class="csoc">
-          <a href="#" class="soclink" aria-label="Instagram">📸</a>
-          <a href="#" class="soclink" aria-label="Facebook">f</a>
-          <a href="#" class="soclink" aria-label="TikTok">♪</a>
-          <a href="#" class="soclink" aria-label="WhatsApp">💬</a>
+        <div class="c-soc">
+          <a href="#" class="soc-btn" aria-label="Instagram">📸</a>
+          <a href="#" class="soc-btn" aria-label="Facebook">f</a>
+          <a href="#" class="soc-btn" aria-label="TikTok">♪</a>
+          <a href="#" class="soc-btn" aria-label="WhatsApp">💬</a>
         </div>
       </div>
 
-      <div class="cform fi">
-        <h3>Solicita tu presupuesto gratuito</h3>
-        <div class="fsuccess" id="fsuccess">✓ ¡Mensaje enviado con éxito! Te contactaremos en 24–48 horas.</div>
-        <form id="cformEl" novalidate>
-          <div class="frow">
+      <div class="c-form reveal reveal-d1">
+        <h3>Solicita tu presupuesto</h3>
+        <div class="f-ok" id="fok">✦ &nbsp; MENSAJE ENVIADO — TE CONTACTAMOS EN 24–48 H</div>
+        <form id="cform" novalidate>
+          <div class="f-row">
             <div class="fg"><label for="fn">Nombre *</label><input type="text" id="fn" name="nombre" placeholder="Tu nombre" required></div>
             <div class="fg"><label for="fap">Apellidos</label><input type="text" id="fap" name="apellidos" placeholder="Tus apellidos"></div>
           </div>
-          <div class="frow">
+          <div class="f-row">
             <div class="fg"><label for="ftl">Teléfono *</label><input type="tel" id="ftl" name="telefono" placeholder="+34 600 000 000" required></div>
-            <div class="fg"><label for="fem">Correo electrónico *</label><input type="email" id="fem" name="correo" placeholder="tu@correo.com" required></div>
+            <div class="fg"><label for="fem">Correo *</label><input type="email" id="fem" name="correo" placeholder="tu@correo.com" required></div>
           </div>
           <div class="fg">
             <label for="fte">Tipo de evento *</label>
@@ -1105,62 +1490,68 @@
               <option value="otro">Otro</option>
             </select>
           </div>
-          <div class="frow">
+          <div class="f-row">
             <div class="fg"><label for="ffd">Fecha aproximada</label><input type="date" id="ffd" name="fecha"></div>
             <div class="fg">
               <label for="fpb">Presupuesto orientativo</label>
               <select id="fpb" name="presupuesto">
                 <option value="">¿Cuánto tienes en mente?</option>
-                <option value="hasta-1000">Hasta 1.000 €</option>
-                <option value="1000-2000">1.000 € – 2.000 €</option>
-                <option value="2000-3500">2.000 € – 3.500 €</option>
-                <option value="mas-3500">Más de 3.500 €</option>
-                <option value="hablar">Prefiero hablarlo</option>
+                <option>Hasta 1.000 €</option>
+                <option>1.000 € – 2.000 €</option>
+                <option>2.000 € – 3.500 €</option>
+                <option>Más de 3.500 €</option>
+                <option>Prefiero hablarlo</option>
               </select>
             </div>
           </div>
-          <div class="fg">
-            <label for="fmsg">Cuéntanos sobre tu evento</label>
-            <textarea id="fmsg" name="mensaje" placeholder="¿Cuántos invitados? ¿Dónde será? ¿Qué estilo buscas? ¿Hay algo especial que quieras incluir?"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary fsend">Enviar solicitud sin compromiso</button>
-          <p class="fnote">Al enviar este formulario aceptas que nos pongamos en contacto contigo. Sin spam, sin compromiso.</p>
+          <div class="fg"><label for="fmsg">Cuéntanos tu evento</label><textarea id="fmsg" name="mensaje" placeholder="¿Cuántos invitados? ¿Dónde será? ¿Qué estilo buscas?"></textarea></div>
+          <button type="submit" class="btn btn-light f-send">
+            Enviar solicitud sin compromiso
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+          <p class="f-note">Sin spam, sin compromiso. Te respondemos en 24–48 horas.</p>
         </form>
       </div>
-
     </div>
   </div>
 </section>
 
-<!-- BOTTOM CTA BAND -->
-<div class="cta-band">
-  <div class="container">
+<!-- BOTTOM CTA -->
+<div class="cta-bottom">
+  <div class="container--narrow" style="text-align:center;">
     <h2>Recuerdos que duran toda la vida</h2>
     <p>Tu boda, tu Quinceañera, tu fiesta — merece el mejor fotógrafo y el mejor DJ de la Costa Blanca.</p>
-    <div class="btns">
-      <a href="#contacto" class="btn btn-primary">Solicitar presupuesto ahora</a>
+    <div class="cta-btns">
+      <a href="#contacto" class="btn btn-light">
+        Solicitar presupuesto ahora
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
       <a href="https://wa.me/34600000000" class="btn btn-outline">💬 WhatsApp directo</a>
     </div>
   </div>
 </div>
 
-<!-- ============================================================
+<!-- ╔══════════════════════════════════════════════════════
      FOOTER
-============================================================ -->
+═══════════════════════════════════════════════════════╗ -->
 <footer class="footer">
   <div class="container">
     <div class="footer-top">
-      <div class="fbrand">
-        <h3>AURA</h3>
+      <div class="f-brand">
+        <div class="f-brand-logo">
+          <span class="fl-l">FOTO</span>
+          <span class="fl-c">AURA</span>
+          <span class="fl-r">DJ</span>
+        </div>
         <p>Tu fotógrafo y DJ en un solo contrato. Bodas, quinceañeras y eventos en Denia, Costa Blanca y toda la provincia de Alicante.</p>
-        <div style="display:flex;gap:9px;">
-          <a href="#" class="soclink">📸</a>
-          <a href="#" class="soclink">f</a>
-          <a href="#" class="soclink">♪</a>
+        <div class="c-soc" style="margin-top:4px;">
+          <a href="#" class="soc-btn">📸</a>
+          <a href="#" class="soc-btn">f</a>
+          <a href="#" class="soc-btn">♪</a>
         </div>
       </div>
-      <div class="fcol">
-        <h4>Servicios</h4>
+      <div class="f-col">
+        <h5>Servicios</h5>
         <ul>
           <li><a href="#servicios">Fotografía de bodas</a></li>
           <li><a href="#servicios">DJ profesional</a></li>
@@ -1169,19 +1560,18 @@
           <li><a href="#servicios">Eventos corporativos</a></li>
         </ul>
       </div>
-      <div class="fcol">
-        <h4>Navegación</h4>
+      <div class="f-col">
+        <h5>Navegación</h5>
         <ul>
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#nosotros">Nosotros</a></li>
           <li><a href="#galeria">Galería</a></li>
           <li><a href="#paquetes">Paquetes</a></li>
-          <li><a href="#testimonios">Testimonios</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
       </div>
-      <div class="fcol">
-        <h4>Zona de trabajo</h4>
+      <div class="f-col">
+        <h5>Zona de trabajo</h5>
         <ul>
           <li><a href="#contacto">Denia</a></li>
           <li><a href="#contacto">Costa Blanca</a></li>
@@ -1199,90 +1589,56 @@
   </div>
 </footer>
 
-<!-- ============================================================
-     JAVASCRIPT
-============================================================ -->
+<!-- ╔══════════════════════════════════════════════════════
+     JS
+═══════════════════════════════════════════════════════╗ -->
 <script>
-  /* NAV SCROLL */
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 50);
-  }, { passive: true });
+/* NAV */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60), { passive: true });
 
-  /* MOBILE MENU */
-  const burger  = document.getElementById('burger');
-  const mobMenu = document.getElementById('mobMenu');
-  const mobClose= document.getElementById('mobClose');
-  burger.addEventListener('click', () => { mobMenu.classList.add('open'); document.body.style.overflow = 'hidden'; });
-  function closeMob() { mobMenu.classList.remove('open'); document.body.style.overflow = ''; }
-  mobClose.addEventListener('click', closeMob);
-  document.querySelectorAll('.mob-menu .ml').forEach(l => l.addEventListener('click', closeMob));
+/* MOBILE MENU */
+const mob = document.getElementById('mob');
+document.getElementById('burger').onclick = () => { mob.classList.add('open'); document.body.style.overflow = 'hidden'; };
+function closeMob() { mob.classList.remove('open'); document.body.style.overflow = ''; }
+document.getElementById('mobX').onclick = closeMob;
+document.querySelectorAll('.mob .ml').forEach(l => l.addEventListener('click', closeMob));
 
-  /* GALLERY TABS */
-  document.querySelectorAll('.gal-tab').forEach(tab => {
-    tab.addEventListener('click', () => {
-      document.querySelectorAll('.gal-tab').forEach(t => t.classList.remove('active'));
-      document.querySelectorAll('.gal-panel').forEach(p => p.classList.remove('active'));
-      tab.classList.add('active');
-      document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
-    });
+/* GALLERY TABS */
+document.querySelectorAll('.g-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.g-tab').forEach(t => t.classList.remove('on'));
+    document.querySelectorAll('.g-panel').forEach(p => p.classList.remove('on'));
+    tab.classList.add('on');
+    document.getElementById('gt-' + tab.dataset.tab).classList.add('on');
   });
+});
 
-  /* FADE-IN OBSERVER */
-  const fiEls = document.querySelectorAll('.fi');
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target); }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
-  fiEls.forEach(el => io.observe(el));
+/* REVEAL ON SCROLL */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  /* CONTACT FORM */
-  document.getElementById('cformEl').addEventListener('submit', e => {
-    e.preventDefault();
-    const f = e.target;
-    const nombre = f.nombre.value.trim();
-    const tel    = f.telefono.value.trim();
-    const email  = f.correo.value.trim();
-    const tipo   = f.tipo_evento.value;
-    if (!nombre || !tel || !email || !tipo) {
-      alert('Por favor, rellena los campos obligatorios: nombre, teléfono, correo y tipo de evento.');
-      return;
-    }
-    f.style.display = 'none';
-    document.getElementById('fsuccess').style.display = 'block';
+/* CONTACT FORM */
+document.getElementById('cform').addEventListener('submit', e => {
+  e.preventDefault();
+  const f = e.target;
+  if (!f.nombre.value.trim() || !f.telefono.value.trim() || !f.correo.value.trim() || !f.tipo_evento.value) {
+    alert('Por favor, rellena los campos obligatorios: nombre, teléfono, correo y tipo de evento.');
+    return;
+  }
+  f.style.display = 'none';
+  document.getElementById('fok').style.display = 'block';
+});
+
+/* SMOOTH SCROLL */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
   });
-
-  /* SMOOTH SCROLL */
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const t = document.querySelector(a.getAttribute('href'));
-      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
-    });
-  });
-
-  /* HERO PARTICLE DECORATION */
-  (function() {
-    const style = document.createElement('style');
-    style.textContent = `
-      @keyframes floatP {
-        0%,100%{transform:translateY(0) translateX(0);opacity:.25}
-        33%{transform:translateY(-10px) translateX(5px);opacity:.55}
-        66%{transform:translateY(-16px) translateX(-4px);opacity:.35}
-      }`;
-    document.head.appendChild(style);
-    document.querySelectorAll('.panel').forEach(panel => {
-      for (let i = 0; i < 7; i++) {
-        const p = document.createElement('div');
-        p.style.cssText = `position:absolute;width:${Math.random()*2+1}px;height:${Math.random()*2+1}px;
-          background:rgba(39,201,109,${Math.random()*.35+.1});border-radius:50%;
-          left:${Math.random()*100}%;top:${Math.random()*100}%;pointer-events:none;z-index:1;
-          animation:floatP ${Math.random()*6+5}s ease-in-out infinite;
-          animation-delay:${Math.random()*4}s;`;
-        panel.appendChild(p);
-      }
-    });
-  })();
+});
 </script>
 </body>
 </html>
